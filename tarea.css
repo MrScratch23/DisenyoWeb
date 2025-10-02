@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Alan Sans";
+    src: url(/Alan_Sans/AlanSans-VariableFont_wght.ttf);
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #DDD0C8;
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    margin: 3px;
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+     
+}
+p {
+    font-family: "Alan Sans", sans-serif;
+    margin: 0.25em;
+}
+nav {
+background-color: #01257D;
+color: white;
+
+}
+footer {
+    background-color: #2272FF;
+    color: white;
+}
