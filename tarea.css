@@ -1,17 +1,24 @@
 @font-face {
-    font-family: "Alan Sans";
+    font-family: "Alan Sans", sans-serif;
     src: url(/Alan_Sans/AlanSans-VariableFont_wght.ttf);
 }
 
+:root {
+  --color-fondo: #F5F7FF;
+  --color-fondonavegacion: #01257D;
+  --color-footer: #2272FF;
+}
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #DDD0C8;
+    background-color: var(--color-fondo);
 }
+
+
 
 h1 {
     font-family: "Roboto", sans-serif;
-    margin: 3px;
+    letter-spacing: 3px;
     color: coral;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     
@@ -19,14 +26,14 @@ h1 {
 }
 p {
     font-family: "Alan Sans", sans-serif;
-    margin: 0.25em;
+    word-spacing: 0.25em;
 }
 nav {
-background-color: #01257D;
+background-color: var(--color-fondonavegacion);
 color: white;
 
 }
 footer {
-    background-color: #2272FF;
+    background-color: var(--color-footer);
     color: white;
 }
