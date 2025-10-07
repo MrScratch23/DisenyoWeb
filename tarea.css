@@ -5,13 +5,13 @@
 
 :root {
   --color-fondo: #F5F7FF;
-  --color-fondonavegacion: #01257D;
+  --color-fondonavegacion: rgba(1, 37, 125, 0.85); /* con opacidad */
   --color-footer: #2272FF;
 }
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: var(--color-fondo);
+    
 }
 
 
