@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Alan Sans", sans-serif;
+    src: url(/Alan_Sans/AlanSans-VariableFont_wght.ttf);
+}
+
+:root {
+  --color-fondo: #F5F7FF;
+  --color-fondonavegacion: rgba(1, 37, 125, 0.85); /* con opacidad */
+  --color-footer: #2272FF;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    
+}
+
+
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 3px;
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+     
+}
+p {
+    font-family: "Alan Sans", sans-serif;
+    word-spacing: 0.25em;
+}
+nav {
+background-color: var(--color-fondonavegacion);
+color: white;
+
+}
+footer {
+    background-color: var(--color-footer);
+    color: white;
+}
