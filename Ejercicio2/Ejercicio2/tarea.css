@@ -11,6 +11,11 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    display: grid;
+   
+   /* rellenar grid template */
+    /* grid-template: */
+   
     
 }
 
@@ -21,13 +26,24 @@ h1 {
     letter-spacing: 3px;
     color: coral;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    
-     
+
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
 }
+
+ 
+
+
+
+
 p {
     font-family: "Alan Sans", sans-serif;
     word-spacing: 0.25em;
+    text-align: center;
 }
+
 nav {
 background-color: var(--color-fondonavegacion);
 color: white;
