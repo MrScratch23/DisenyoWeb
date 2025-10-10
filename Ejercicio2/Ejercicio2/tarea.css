@@ -12,14 +12,25 @@
 body {
     font-family: "Roboto", sans-serif;
     display: grid;
-   
-   /* rellenar grid template */
-    /* grid-template: */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 80px 4fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        "aside main main main"
+        "footer footer footer footer";
    
     
 }
 
+main {
+    grid-area: main;
+ 
+}
 
+header {
+    grid-area: header;
+}
 
 h1 {
     font-family: "Roboto", sans-serif;
@@ -47,9 +58,18 @@ p {
 nav {
 background-color: var(--color-fondonavegacion);
 color: white;
+grid-area: nav;
 
+}
+
+aside {
+    /* bordecito para que se note que esta a la izquierda :) */
+    border: 1px solid black;
+    border-style: solid;
+    grid-area: aside;
 }
 footer {
     background-color: var(--color-footer);
     color: white;
+    grid-area: footer;
 }
