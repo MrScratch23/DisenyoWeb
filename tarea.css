@@ -33,7 +33,7 @@ header {
     background-color: var(--color-fondonavegacion);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     z-index: 11;
 }
 
@@ -113,6 +113,7 @@ footer {
     color: white;
     grid-area: footer;
     justify-items: center;
+    z-index: 6;
 }
 
 main {
@@ -129,13 +130,14 @@ main {
 
 aside {
     position: sticky;
-    top: 160px; /* header + nav */
+    top: 160px;
     grid-area: aside;
-    align-self: start;
+    align-self: stretch; 
     border: 2px solid #2272FF;
     border-radius: 12px;
     padding: 20px;
     margin: 20px;
     background-color: white;
     z-index: 5;
+    
 }
