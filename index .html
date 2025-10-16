@@ -28,30 +28,167 @@
 
     <main>
       <!-- // debe haber dos section  -->
-      <section>
-        <div id="producto-promocion">
-            <h1>Producto en promocion. ULTIMA OFERTA. COMPRA COMPRA COMPRA. CAPITALISMO</h1>
-            <img src="" alt="">
+      <section id="producto-promocion">
+  <h1 class="titulo-promocion">PELICULA DE LA SEMANA</h1>
+  <input type="checkbox" id="toggle-info" hidden>
+  <label class="imagen-container" for="toggle-info">
+    <img src="/MV5BMWFiZjUwZmEtMGVjYi00MjI0LTk5MzAtMjM0MjRkODcyNjI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="">
+    <div class="info-promocion">
+      Precio: $15.99
+    </div>
+  </label>
+</section>
 
-        </div>
-        
-      </section>
       <div id="producto-destacado">
-        <div>
-<h1>Tarjetas de los productos destacados</h1>
-
-<h1>Tabla resumen de los productos destacados:</h1>
-
+        <h1>Peliculas del mes:</h1>
+        <div class="cards-container">
+          <!-- Tarjeta 1 -->
+          <div class="card producto-par">
+            <img src="/MV5BNTBhNWJjZWItYzY3NS00M2NkLThmOWYtYTlmNzBmN2UxZWFjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="pelicula1">
+            <h2>Laptop HP Pavilion</h2>
+            <p>Potente portátil para trabajo y ocio.</p>
+            <ul>
+              <li>Precio: 799.99€</li>
+              <li>Stock: 10</li>
+              <li>Procesador: Intel i7</li>
+            </ul>
+          </div>
+          <!-- Tarjeta 2 -->
+          <div class="card producto-impar">
+            <img src="/MV5BMzIxN2IzOGItOTcyZi00MTkzLWE4ZjktZTdlOWFiYWE4NzlmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="pelicula2">
+            <h2>Samsung Galaxy S21</h2>
+            <p>Smartphone de última generación con cámara profesional.</p>
+            <ul>
+              <li>Precio: 699.99€</li>
+              <li>Stock: 25</li>
+              <li>Pantalla: 6.2"</li>
+            </ul>
+          </div>
+          <!-- Tarjeta 3 -->
+          <div class="card producto-par">
+            <img src="/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_.jpg" alt="Auriculares Sony WH-1000XM4">
+            <h2>Sony WH-1000XM4</h2>
+            <p>Auriculares inalámbricos con cancelación de ruido.</p>
+            <ul>
+              <li>Precio: 349.99€</li>
+              <li>Stock: 15</li>
+              <li>Autonomía: 30h</li>
+            </ul>
+          </div>
+          <!-- Tarjeta 4 -->
+          <div class="card producto-impar">
+            <img src="/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_.jpg" alt="Cafetera Nespresso Vertuo">
+            <h2>Nespresso Vertuo</h2>
+            <p>Cafetera automática para café gourmet.</p>
+            <ul>
+              <li>Precio: 199.99€</li>
+              <li>Stock: 20</li>
+              <li>Tipo: Cápsulas</li>
+            </ul>
+          </div>
+          <!-- Tarjeta 5 -->
+          <div class="card producto-par">
+            <img src="/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Aspiradora robot Roomba i7">
+            <h2>Roomba i7</h2>
+            <p>Robot aspirador inteligente para todo tipo de suelos.</p>
+            <ul>
+              <li>Precio: 599.99€</li>
+              <li>Stock: 8</li>
+              <li>Autonomía: 120min</li>
+            </ul>
+          </div>
+          <!-- Tarjeta 6 -->
+          <div class="card producto-impar">
+            <img src="img/monitor.jpg" alt="Monitor LG UltraFine 4K">
+            <h2>LG UltraFine 4K</h2>
+            <p>Monitor profesional con resolución 4K.</p>
+            <ul>
+              <li>Precio: 699.99€</li>
+              <li>Stock: 12</li>
+              <li>Tamaño: 27"</li>
+            </ul>
+          </div>
+          <!-- Puedes añadir hasta 9 tarjetas siguiendo el mismo patrón -->
         </div>
+
+        <h1>Tabla resumen de los productos destacados:</h1>
+        <table class="tabla-productos">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Dato extra</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Laptop HP Pavilion</td>
+              <td>799.99€</td>
+              <td>10</td>
+              <td>Intel i7</td>
+            </tr>
+            <tr>
+              <td>Samsung Galaxy S21</td>
+              <td>699.99€</td>
+              <td>25</td>
+              <td>Pantalla 6.2"</td>
+            </tr>
+            <tr>
+              <td>Sony WH-1000XM4</td>
+              <td>349.99€</td>
+              <td>15</td>
+              <td>Autonomía 30h</td>
+            </tr>
+            <tr>
+              <td>Nespresso Vertuo</td>
+              <td>199.99€</td>
+              <td>20</td>
+              <td>Cápsulas</td>
+            </tr>
+            <tr>
+              <td>Roomba i7</td>
+              <td>599.99€</td>
+              <td>8</td>
+              <td>Autonomía 120min</td>
+            </tr>
+            <tr>
+              <td>LG UltraFine 4K</td>
+              <td>699.99€</td>
+              <td>12</td>
+              <td>27"</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <section>
        
     </main>
 
-    <aside>
-      <h1>Publicidad</h1>
-      <p>Una barra lateral izquierda</p>
-    </aside>
+  <aside>
+  <h1>Compromiso Sostenible</h1>
+  <div class="sostenibilidad">
+    <div class="columna">
+      <h2>Libros Eco-Friendly</h2>
+      <p>Promovemos editoriales que utilizan papel reciclado y tintas ecológicas para cuidar el planeta.</p>
+      <h2>Cine Responsable</h2>
+      <p>Fomentamos películas y documentales que generan conciencia ambiental y social.</p>
+      <h2>Música con Causa</h2>
+      <p>Apoyamos artistas que promueven mensajes de sostenibilidad y respeto por la naturaleza.</p>
+    </div>
+    <div class="columna">
+      <h2>Arte y Naturaleza</h2>
+      <p>Impulsamos exposiciones y proyectos artísticos que abordan temas ambientales.</p>
+      <h2>Consumo Cultural Responsable</h2>
+      <p>Incentivamos el consumo consciente de productos culturales y la reutilización de materiales.</p>
+      <h2>Educación Ambiental</h2>
+      <p>Difundimos información y eventos para educar sobre sostenibilidad en el arte y la cultura.</p>
+    </div>
+  </div>
+</aside>
+
+
+
 
     <footer>
         <div>

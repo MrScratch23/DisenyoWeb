@@ -40,6 +40,10 @@ header {
 header img {
     height: 50%;
     width: auto;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 12;
 }
 
 header h1 {
@@ -102,6 +106,46 @@ p {
     border: 2px solid #2272FF;
     border-radius: 12px;
 }
+#producto-promocion img {
+    height: 200px; 
+    width: auto;
+    position: static; 
+    margin: 20px 0 0 0; 
+    display: block;
+}
+.titulo-promocion {
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.titulo-promocion:hover {
+  color: coral;
+}
+
+.imagen-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.info-promocion {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(34, 114, 255, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: none;
+  font-family: "Alan Sans", sans-serif;
+  font-size: 1rem;
+}
+
+/* Mostrar info cuando el checkbox esté marcado */
+#toggle-info:checked + .imagen-container .info-promocion {
+  display: block;
+}
 
 #producto-destacado {
     border: 2px solid #2272FF;
@@ -126,8 +170,6 @@ main {
     min-height: calc(100vh - 160px);
 }
 
-
-
 aside {
     position: sticky;
     top: 160px;
@@ -139,5 +181,124 @@ aside {
     margin: 20px;
     background-color: white;
     z-index: 5;
-    
+    font-family: "Alan Sans", sans-serif;
+    color: #1a237e; /* azul oscuro */
+    box-shadow: 0 4px 8px rgba(34, 114, 255, 0.2);
 }
+
+aside h1 {
+    text-align: center;
+    color: coral;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+aside .sostenibilidad {
+    display: flex;
+    gap: 20px;
+    border-left: 2px solid #2272FF;
+    border-right: 2px solid #2272FF;
+    padding: 0 10px;
+}
+
+aside .columna {
+    flex: 1;
+    padding: 0 15px;
+}
+
+aside .columna:not(:last-child) {
+    border-right: 2px solid #2272FF;
+}
+
+aside h2 {
+    font-family: "Alan Sans", sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #2272FF;
+}
+
+aside p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    color: #333;
+}
+
+/* Cards de productos destacados */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin: 32px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(34, 114, 255, 0.15);
+  padding: 18px;
+  text-align: center;
+  transition: box-shadow 0.3s, filter 0.3s;
+  border: 2px solid #2272FF;
+  font-family: "Alan Sans", sans-serif;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  transition: filter 0.3s;
+}
+
+.card:hover,
+.card:focus {
+  filter: brightness(0.95) drop-shadow(0 0 8px coral);
+}
+
+.card.producto-par {
+  box-shadow: 0 4px 16px rgba(34, 114, 255, 0.25);
+}
+
+.card.producto-impar {
+  box-shadow: 0 4px 16px rgba(255, 127, 80, 0.25);
+}
+
+/* Tabla resumen */
+.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 32px;
+  font-family: "Alan Sans", sans-serif;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(34, 114, 255, 0.15);
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  border: 1px solid #2272FF;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.tabla-productos th {
+  background: #2272FF;
+  color: white;
+  font-weight: bold;
+}
+
+.tabla-productos tr:nth-child(even) {
+  background: #f5f7ff;
+}
+
+.tabla-productos tr:hover {
+  background: #e3ecff;
+}
+
