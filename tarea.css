@@ -5,7 +5,7 @@
 
 :root {
     --color-fondo: #F5F7FF;
-    --color-fondonavegacion: rgba(1, 37, 125, 0.85);
+    --color-fondonavegacion: rgba(1, 37, 125);
     --color-footer: #2272FF;
 }
 
@@ -14,8 +14,8 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 1fr 80px 4fr 1fr;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "header header"
         "nav nav"
@@ -105,46 +105,89 @@ p {
     color: white;
     border: 2px solid #2272FF;
     border-radius: 12px;
+    background-color: #1a237e;
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    grid-area: main;
 }
-#producto-promocion img {
-    height: 200px; 
-    width: auto;
-    position: static; 
-    margin: 20px 0 0 0; 
-    display: block;
-}
+
 .titulo-promocion {
-  color: white;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
 }
 
 .titulo-promocion:hover {
-  color: coral;
+    color: coral;
+}
+
+.promocion-contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .imagen-container {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.imagen-container img {
+    width: 280px;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.imagen-container img:hover {
+    transform: scale(1.03);
 }
 
 .info-promocion {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background-color: rgba(34, 114, 255, 0.8);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  display: none;
-  font-family: "Alan Sans", sans-serif;
-  font-size: 1rem;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(34, 114, 255, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: none;
+    font-family: "Alan Sans", sans-serif;
+    font-size: 1rem;
 }
 
 /* Mostrar info cuando el checkbox esté marcado */
 #toggle-info:checked + .imagen-container .info-promocion {
-  display: block;
+    display: block;
+}
+
+.info-lateral {
+    flex: 1;
+    color: white;
+    font-family: "Alan Sans", sans-serif;
+    font-size: 1rem;
+}
+
+.info-lateral h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: coral;
+}
+
+.info-lateral p {
+    margin: 8px 0;
+    line-height: 1.5;
 }
 
 #producto-destacado {
@@ -184,6 +227,7 @@ aside {
     font-family: "Alan Sans", sans-serif;
     color: #1a237e; /* azul oscuro */
     box-shadow: 0 4px 8px rgba(34, 114, 255, 0.2);
+    
 }
 
 aside h1 {
@@ -207,11 +251,9 @@ aside .sostenibilidad {
 aside .columna {
     flex: 1;
     padding: 0 15px;
+
 }
 
-aside .columna:not(:last-child) {
-    border-right: 2px solid #2272FF;
-}
 
 aside h2 {
     font-family: "Alan Sans", sans-serif;
@@ -233,10 +275,11 @@ aside p {
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin: 32px 0;
+  
 }
 
 .card {
-  background: white;
+  background-color: #1a237e;
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(34, 114, 255, 0.15);
   padding: 18px;
@@ -263,10 +306,12 @@ aside p {
 
 .card.producto-par {
   box-shadow: 0 4px 16px rgba(34, 114, 255, 0.25);
+  color: white;
 }
 
 .card.producto-impar {
   box-shadow: 0 4px 16px rgba(255, 127, 80, 0.25);
+  color: white;
 }
 
 /* Tabla resumen */
@@ -301,4 +346,3 @@ aside p {
 .tabla-productos tr:hover {
   background: #e3ecff;
 }
-
