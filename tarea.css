@@ -341,10 +341,19 @@ aside p {
     transition: filter 0.3s;
 }
 
-.cartaproducto:hover,
-.cartaproducto:focus {
-    filter: brightness(0.95) drop-shadow(0 0 8px coral);
+.cartaproducto:nth-child(odd){
+    box-shadow: 4px 4px 16px rgb(0, 0, 0);
+    border-radius: 18px;
+    
 }
+
+
+.cartaproducto:nth-child(even){
+    box-shadow: 4px 4px 16px rgb(248, 85, 30);
+    border-radius: 18px;
+    
+}
+
 
 .cartaproducto ul {
     list-style: none;

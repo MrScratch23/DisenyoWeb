@@ -202,7 +202,7 @@ p {
 #producto-destacado {
     border: 2px solid #2272FF;
     border-radius: 12px;
-    background-color: black;
+    background-color: rgb(253, 253, 253);
 }
 
 
@@ -320,16 +320,7 @@ aside p {
     margin: 32px 0;
 }
 
-.cartas:nth-child(odd){
-    filter:saturate();
-    border: 2px solid aquamarine;
-    
-}
-
-.cartas:nth-child(even):hover {
-    filter: sepia();
-}
-
+/* hay que hacer lo del nth-odd y even para los impares */
 
 
 .cartaproducto {
@@ -351,10 +342,21 @@ aside p {
     height: auto;
     border-radius: 16px;
     margin-bottom: 12px;
-    filter: active();
-
+    transition: filter 0.3s;
 }
 
+.cartaproducto:nth-child(odd){
+    box-shadow: 4px 4px 16px rgb(248, 55, 55);
+    border-radius: 18px;
+    
+}
+
+
+.cartaproducto:nth-child(even){
+    box-shadow: 4px 4px 16px rgb(30, 248, 103);
+    border-radius: 18px;
+    
+}
 
 
 /* aqui empiezo con las listas */
