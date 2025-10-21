@@ -15,6 +15,7 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: 25% 75%;
+/* no me he complicado la vida, auto para que entre todo  */
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
         "header header"
@@ -158,7 +159,7 @@ p {
     object-fit: cover;
 }
 
-.imagen-contenedor img:hover {
+.imagen-contenedor img:active {
     filter: sepia();
 }
 
@@ -216,7 +217,7 @@ footer {
     z-index: 6;
 }
 
-/* Bloque superior - Redes sociales */
+/* para bloque superior fristchild */
 footer section:first-child {
     display: flex;
     justify-content: center;
@@ -226,7 +227,7 @@ footer section:first-child {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Bloque inferior - Derechos de autor */
+/* para el bloque inferior lastchild */
 footer section:last-child {
     text-align: center;
     padding: 10px 0;
@@ -234,7 +235,7 @@ footer section:last-child {
     font-size: 0.9rem;
 }
 
-/* Si usas imágenes para redes sociales */
+/* para modificar los svg de los footer */
 footer img {
     width: 30px;
     height: 30px;
@@ -252,7 +253,7 @@ main {
     height: auto;
     padding: 20px 0;
     background-color: black;
-    min-height: auto; /* Añade esto */
+    min-height: auto; 
 }
 
 aside {
@@ -311,13 +312,25 @@ aside p {
     color: #333;
 }
 
-/* Cards de productos destacados - CORREGIDO */
+/* cartas, modificando poco a poco */
 .cartas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin: 32px 0;
 }
+
+.cartas:nth-child(odd){
+    filter:saturate();
+    border: 2px solid aquamarine;
+    
+}
+
+.cartas:nth-child(even):hover {
+    filter: sepia();
+}
+
+
 
 .cartaproducto {
     background-color: #1a237e;
@@ -338,13 +351,13 @@ aside p {
     height: auto;
     border-radius: 16px;
     margin-bottom: 12px;
-    transition: filter 0.3s;
+    filter: active();
+
 }
 
-.cartaproducto:hover,
-.cartaproducto:focus {
-    filter: brightness(0.95) drop-shadow(0 0 8px coral);
-}
+
+
+/* aqui empiezo con las listas */
 
 .cartaproducto ul {
     list-style: none;
@@ -371,7 +384,7 @@ aside p {
     line-height: 1.5;
 }
 
-/* Tabla resumen */
+/* tabla bien resumia */
 .tabla-productos {
     width: 100%;
     border-collapse: collapse;
