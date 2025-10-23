@@ -4,26 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tarea</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
     <link rel="stylesheet" href="css/tarea.css" />
+    
+    
   </head>
   <body>
-    <header>
-      <h1>TuttifruttiReviews</h1>
-      <img src="img/1691282.svg" alt="Logo TuttifruttiReviews">
-    </header>
-    
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Libros</a></li>
-        <li><a href="#">Peliculas</a></li>
-        <li><a href="#">Musica</a></li>
-      </ul>
-    </nav>
+   <header>
+  <h1>TuttifruttiReviews</h1>
+  <img src="img/1691282.svg" alt="Logo TuttifruttiReviews" />
+  <input type="checkbox" class="burgesasinpatatas">
+
+ <!-- Checkbox con id para enlazar con el label -->
+  <input type="checkbox" id="menu-toggle" class="burgesasinpatatas" />
+
+  <!-- Label con for apuntando al checkbox -->
+  <label for="menu-toggle" class="burgesasinpatatas" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Libros</a></li>
+    <li><a href="#">Peliculas</a></li>
+    <li><a href="#">Musica</a></li>
+  </ul>
+</nav>
 
     <main>
       <section id="producto-promocion">
