@@ -15,9 +15,9 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 0.3fr 1fr;
 /* no me he complicado la vida, auto para que entre todo  */
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "header header"
         "nav nav"
@@ -119,6 +119,7 @@ p {
     border-radius: 12px;
     background-color: #1a237e;
     padding: 20px;
+    margin: 3rem;
     width: 90%;
     max-width: 1000px;
     display: flex;
@@ -148,6 +149,7 @@ p {
     width: 100%;
     margin-top: 20px;
     flex: 1;
+
 }
 
 .imagen-contenedor {
