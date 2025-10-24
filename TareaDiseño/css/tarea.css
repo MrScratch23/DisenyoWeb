@@ -491,9 +491,14 @@ footer img {
         display: none;
     }
 
-    input:cheked nav {
-        display: block;
-    }
+   input:checked ~ nav {
+    display: block;
+}
+
+#menu-toggle:checked ~ nav {
+    display: block;
+  }
+
 
     .burgesasinpatatas {
         display: block;
