@@ -467,7 +467,7 @@ footer img {
     header {
         grid-area: header;
         z-index: 11;
-        position: relative;
+        position: sticky;
         height: 80px;
     }
 
@@ -522,6 +522,7 @@ footer img {
     /* MOSTRAR nav cuando el checkbox está checked */
     #menu-toggle:checked ~ nav {
         display: block;
+        position: sticky;
     }
 
     /* Ocultar checkbox real */
