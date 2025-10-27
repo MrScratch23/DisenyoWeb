@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Alan Sans";
-    src: url(/Alan_Sans/AlanSans-VariableFont_wght.ttf);
+    src: url(Alan_Sans/AlanSans-VariableFont_wght.ttf);
 }
 
 :root {
@@ -74,10 +74,6 @@ nav {
     z-index: 10;
     grid-area: nav;
 }
-
-
-
-
 
 nav ul {
     list-style: none;
@@ -269,8 +265,6 @@ aside .sostenibilidad {
     padding: 0 15px;
 }
 
-
-
 aside h2 {
     font-family: "Alan Sans", sans-serif;
     font-size: 1.3rem;
@@ -453,19 +447,12 @@ footer img {
     transition: transform 0.3s ease;
 }
 
-
-
-
 .burgesasinpatatas {
     display: none;
-
 }
-
-
 
 /* ===== DISEÑO RESPONSIVO ===== */
 @media (max-width: 576px) {
-
     body {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
@@ -477,48 +464,76 @@ footer img {
             "footer";
     }
 
-    
-
     header {
         grid-area: header;
         z-index: 11;
+        position: relative;
+        height: 80px;
     }
 
-    /* menu hamburgesa del nav*/ 
-    nav {
-        position: static;
-        height: auto;
-        padding: 10px 0;
-        grid-area: nav;
-        display: none;
-    }
-
-   input:checked ~ nav {
-    display: block;
-}
-
-#menu-toggle:checked ~ nav {
-    display: block;
-  }
-
-
+    /* MENÚ HAMBURGUESA VISIBLE EN MÓVIL */
     .burgesasinpatatas {
         display: block;
         position: absolute;
         top: 25px;
         right: 20px;
         width: 30px;
-        height: 30px;
+        height: 25px;
         cursor: pointer;
-        z-index: 12;
+        z-index: 1000;
+        background: transparent;
+        border: none;
     }
 
+    /* Líneas del menú hamburguesa */
+    .burgesasinpatatas span {
+        display: block;
+        height: 3px;
+        background: white;
+        margin: 5px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+
+    /* NAV OCULTO POR DEFECTO EN MÓVIL - POSICIÓN JUSTO DEBAJO */
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px; /* Justo debajo de las barras del hamburguesa */
+        left: 0;
+        width: 100%;
+        background: var(--color-fondonavegacion);
+        padding: 15px 0;
+        z-index: 999;
+        height: auto;
+        margin: 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Lista en columna para móvil */
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* MOSTRAR nav cuando el checkbox está checked */
+    #menu-toggle:checked ~ nav {
+        display: block;
+    }
+
+    /* Ocultar checkbox real */
+    #menu-toggle {
+        display: none;
+    }
 
     main {
         z-index: 10;
         grid-area: main;
+        margin-top: 0;
     }
-
 
     aside {
         position: static;
@@ -531,7 +546,4 @@ footer img {
     .cartas {
         grid-template-columns: 1fr;
     }
-
-
-    
 }
