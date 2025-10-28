@@ -16,7 +16,7 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: 0.3fr 1fr;
-/* no me he complicado la vida, auto para que entre todo  */
+/* no me he complicado la vida, hice el grid lo mejor que pude */
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "header header"
@@ -108,7 +108,7 @@ p {
     word-spacing: 0.25em;
 }
 
-/* ===== PRODUCTOS Y PROMOCIONES ===== */
+/* ===== PRODUCTOS Y  PRODUCTO DESTACADOS ===== */
 #producto-promocion {
     color: white;
     border: 2px solid #2272FF;
@@ -211,7 +211,7 @@ p {
     color: white;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== MAIN ===== */
 main {
     margin-top: 0px;
     grid-area: main;
@@ -258,7 +258,7 @@ aside h1 {
 }
 
 aside .sostenibilidad {
-    column-count: 2; /* dos columnas */
+    column-count: 2; /* dos columnas, como pide la señorita */
     column-gap: 30px; 
     border-left: 2px solid #2272FF;
     border-right: 2px solid #2272FF;
@@ -270,7 +270,7 @@ aside h2 {
     font-size: 1.3rem;
     margin-bottom: 10px;
     color: #2272FF;
-    break-inside: avoid; /* Evitar que los títulos se corten entre columnas */
+    break-inside: avoid; /* evitar que los titulos se corten entre columnas */
 }
 
 aside p {
@@ -278,11 +278,11 @@ aside p {
     line-height: 1.5;
     margin-bottom: 18px;
     color: #333;
-    break-inside: avoid; /* Evitar que los párrafos se corten */
+    break-inside: avoid; /* mismo break pero para evitar que se corten los parrafos */
 }
 
 aside article {
-    break-inside: avoid; /* Evitar que los artículos se corten entre columnas */
+    break-inside: avoid; /* break para los articles */
     margin-bottom: 20px;
 }
 
@@ -365,11 +365,11 @@ aside article {
     border-collapse: collapse;
     margin-top: 32px;
     font-family: "Alan Sans", sans-serif;
-    background: black; /* Fondo negro para coincidir */
+    background: black; /* fondo negro para coincidir y que los bordes se vean buenos colores */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(34, 114, 255, 0.15);
-    color: white; /* Texto blanco */
+    color: white; /* texto blanco */
 }
 
 .tabla-productos th,
@@ -377,7 +377,7 @@ aside article {
     border: 1px solid #2272FF;
     padding: 12px 8px;
     text-align: center;
-    color: white; /* Asegurar texto blanco en celdas */
+    color: white; /* para asegurar texto blanco en celdas */
 }
 
 .tabla-productos th {
@@ -387,18 +387,18 @@ aside article {
 }
 
 .tabla-productos tr {
-    background: black; /* Fondo negro para filas */
+    background: black; /* fondo negro para filas */
     border-bottom: 2px solid #2272FF;
     color: white;
 }
 
 .tabla-productos tr:hover {
-    background: #333; /* Gris oscuro al hover */
+    background: #333; /* gris oscuro al hover */
     box-shadow: 0 2px 4px rgba(34, 114, 255, 0.3);
     color: white;
 }
 
-/* También asegurar que el contenedor de la tabla tenga fondo negro */
+/* por si acaso ambién me voy que el contenedor de la tabla tenga fondo negro */
 .tabla-resumen {
     background: black;
     color: white;
@@ -471,7 +471,7 @@ footer img {
         height: 80px;
     }
 
-    /* MENÚ HAMBURGUESA VISIBLE EN MÓVIL */
+    /* burgesa visible para moviles */
     .burgesasinpatatas {
         display: block;
         position: absolute;
@@ -485,7 +485,7 @@ footer img {
         border: none;
     }
 
-    /* Líneas del menú hamburguesa */
+    /* líneas del menú hamburguesa */
     .burgesasinpatatas span {
         display: block;
         height: 3px;
@@ -499,7 +499,7 @@ footer img {
     nav {
         display: none;
         position: absolute;
-        top: 60px; /* Justo debajo de las barras del hamburguesa */
+        top: 60px; /* para que este debajo de las barras de burgesa */
         left: 0;
         width: 100%;
         background: var(--color-fondonavegacion);
@@ -510,7 +510,7 @@ footer img {
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    /* Lista en columna para móvil */
+    /* lista en columna para móvil */
     nav ul {
         flex-direction: column;
         gap: 15px;
@@ -519,7 +519,7 @@ footer img {
         padding: 0;
     }
 
-    /* MOSTRAR nav cuando el checkbox está checked */
+    /* nav cuando el checkbox está checked para mostrar */
     #menu-toggle:checked ~ nav {
         display: block;
         position: sticky;
