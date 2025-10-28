@@ -547,4 +547,8 @@ footer img {
     .cartas {
         grid-template-columns: 1fr;
     }
+    /* ocultar tabla resumen*/
+    .tabla-resumen {
+        display: none;
+    }
 }
