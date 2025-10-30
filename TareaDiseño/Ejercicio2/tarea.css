@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "Alan Sans", sans-serif;
+    src: url(/Alan_Sans/AlanSans-VariableFont_wght.ttf);
+}
+
+:root {
+  --color-fondo: #F5F7FF;
+  --color-fondonavegacion: rgba(1, 37, 125, 0.85); /* con opacidad */
+  --color-footer: #2272FF;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 80px 4fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        "aside main main main"
+        "footer footer footer footer";
+   
+    
+}
+
+main {
+    grid-area: main;
+ 
+}
+
+header {
+    grid-area: header;
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 3px;
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
+
+ 
+
+
+
+
+p {
+    font-family: "Alan Sans", sans-serif;
+    word-spacing: 0.25em;
+    text-align: center;
+}
+
+nav {
+background-color: var(--color-fondonavegacion);
+color: white;
+grid-area: nav;
+
+}
+
+aside {
+    /* bordecito para que se note que esta a la izquierda :) */
+    border: 1px solid black;
+    border-style: solid;
+    grid-area: aside;
+}
+footer {
+    background-color: var(--color-footer);
+    color: white;
+    grid-area: footer;
+}

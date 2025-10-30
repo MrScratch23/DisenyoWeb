@@ -231,7 +231,7 @@ main {
 aside {
     position: sticky;
     /* si le pongo 30px no se corta */
-    top: 30px;
+    top: 180px;
     grid-area: aside;
     align-self: stretch;
     border: 2px solid #2272FF;
@@ -276,7 +276,8 @@ aside h2 {
 
 aside p {
     font-size: 1rem;
-    line-height: 1.5;
+    /* asi al menos no se corta, aunque quede el espacio en blanco*/
+    line-height: 0.59;
     margin-bottom: 18px;
     color: #333;
     break-inside: avoid; /* mismo break pero para evitar que se corten los parrafos */
@@ -452,6 +453,8 @@ footer img {
     display: none;
 }
 
+
+
 /* ===== DISEÑO RESPONSIVO ===== */
 @media (max-width: 576px) {
     body {
@@ -488,6 +491,7 @@ footer img {
 
     /* líneas del menú hamburguesa */
     .burgesasinpatatas span {
+        
         display: block;
         height: 3px;
         background: white;
@@ -552,4 +556,22 @@ footer img {
     .tabla-resumen {
         display: none;
     }
+
+    aside .sostenibilidad {
+    column-count: 1; /* una columna, como pide la señorita cuando es responsivo*/
+    column-gap: 30px; 
+    border-left: 2px solid #2272FF;
+    border-right: 2px solid #2272FF;
+    padding: 0 15px;
+}
+
+aside p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    color: #333;
+    break-inside: avoid; /* mismo break pero para evitar que se corten los parrafos */
+}
+
+
 }
