@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TuttifruttiReviews Accesibilidad</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/accesibilidad.css" />
+    <title>Tarea</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/tarea.css" />
   </head>
   <body>
     <header>
       <h1>TuttifruttiReviews</h1>
-      <img src="img/29039975_7492456.svg" alt="Logo TuttifruttiReviews" />
+      <a href="index.html" aria-label="Volver a la página de inicio">
+        <img src="img/29039975_7492456.svg" alt="Logo TuttifruttiReviews - Volver al inicio" />
+      </a>
     </header>
 
     <!-- Checkbox con id para enlazar con el label -->
@@ -28,11 +27,11 @@
 
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="https://share.google/xJvSk7JmkBRhcnQJU">Libros</a></li>
-        <li><a href="https://share.google/aHhkyrGH6dqBY9eW9">Peliculas</a></li>
-        <li><a href="https://share.google/KtyYW1C6pf5IjTlBD">Musica</a></li>
-        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+        <li><a href="index.html" accesskey="I">Inicio</a></li>
+        <li><a href="https://share.google/xJvSk7JmkBRhcnQJU" accesskey="L">Libros</a></li>
+        <li><a href="https://share.google/aHhkyrGH6dqBY9eW9" accesskey="P">Películas</a></li>
+        <li><a href="https://share.google/KtyYW1C6pf5IjTlBD" accesskey="M">Música</a></li>
+        <li><a href="accesibilidad.html" accesskey="A">Accesibilidad</a></li>
       </ul>
     </nav>
 
@@ -41,123 +40,90 @@
         <h1 class="titulo-promocion">PELICULA DE LA SEMANA</h1>
         <article class="promocion-contenido">
           <section class="imagen-contenedor">
-            <img
-              src="img/MV5BMWFiZjUwZmEtMGVjYi00MjI0LTk5MzAtMjM0MjRkODcyNjI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-              alt="Superman"
-            />
+            <img src="img/superman.jpg" alt="Superman">
             <p class="info-promocion">Precio Compra/Alquiler: $7.99</p>
           </section>
           <section class="info-lateral">
             <h2>Superman</h2>
             <p>Año: 2025</p>
             <p>Director: James Gunn</p>
-            <p>
-              Una reimaginación moderna del icónico superhéroe, enfrentando sus
-              orígenes y el dilema de salvar el mundo o destruirlo.
-            </p>
-            <h2>Actores principales:</h2>
-            <p>David Corenswet como Clark Kent / Superman</p>
-            <p>Rachel Brosnahan como Lois Lane</p>
-            <p>Nicholas Hoult como Lex Luthor</p>
+            <p>Una reimaginación moderna del icónico superhéroe, enfrentando sus orígenes y el dilema de salvar el mundo o destruirlo.</p>
+            <h2> Actores principales:</h2>
+            <p>David Corenswet como Clark Kent / Superman </p>
+            <p> Rachel Brosnahan como Lois Lane</p>
+            <p> Nicholas Hoult como Lex Luthor</p>
             <p>Edi Gathegi como Michael Holt / Mister Terrific</p>
-            <p>Nathan Fillion como Guy Gardner / Linterna Verde</p>
-            <p>Isabela Merced como Kendra Saunders / Hawkgirl</p>
-            <h2>Nota:</h2>
-            <p>68/100</p>
+            <p> Nathan Fillion como Guy Gardner / Linterna Verde</p>
+            <p> Isabela Merced como Kendra Saunders / Hawkgirl</p>
+            <h2> Nota: </h2>
+            <p> 68/100</p>
           </section>
         </article>
       </section>
 
       <section id="producto-destacado">
-        <h1>Peliculas destacadas que recomendamos este mes:</h1>
-
+          <h1>Películas destacadas que recomendamos este mes:</h1>
+        
         <section class="cartas">
-          <article class="cartaproducto">
-            <img
-              src="img/MV5BNTBhNWJjZWItYzY3NS00M2NkLThmOWYtYTlmNzBmN2UxZWFjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-              alt="pelicula1"
-            />
+          <article class="cartaproducto" tabindex="0">
+            <img src="img/weapons.jpg" alt="pelicula1">
             <h2>Weapons</h2>
-            <p>Nueva pelicula de terror del aclamado director Zach Cregger.</p>
+            <p>Nueva película de terror del aclamado director Zach Cregger.</p>
             <ul>
               <li>Precio: 7.99€</li>
               <li>Año: 2025</li>
               <li>Nota: 81/100</li>
             </ul>
           </article>
-
-          <article class="cartaproducto">
-            <img
-              src="img/MV5BMzIxN2IzOGItOTcyZi00MTkzLWE4ZjktZTdlOWFiYWE4NzlmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-              alt="pelicula2"
-            />
+         
+          <article class="cartaproducto" tabindex="0">
+            <img src="img/simpsons.jpg" alt="pelicula2">
             <h2>The Simpsons movie</h2>
-            <p>
-              La familia americana favorita del planeta da el salto a la gran
-              pantalla.
-            </p>
+            <p>La familia americana favorita del planeta da el salto a la gran pantalla.</p>
             <ul>
               <li>Precio: 3.99€</li>
               <li>Año: 2007</li>
               <li>Nota: 80/100</li>
             </ul>
           </article>
-
-          <article class="cartaproducto">
-            <img
-              src="img/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_.jpg"
-              alt="Auriculares Sony WH-1000XM4"
-            />
+          
+          <article class="cartaproducto" tabindex="0">
+            <img src="img/bladerunner.jpg" alt="pelicula3">
             <h2>Blade Runner 2049</h2>
-            <p>
-              Secuela de la legendaria pelicula de ciencia ficcion dirigida por
-              Denis Villeneuve.
-            </p>
+            <p>Secuela de la legendaria película de ciencia ficción dirigida por Denis Villeneuve.</p>
             <ul>
               <li>Precio: 5.99€</li>
               <li>Año : 2017</li>
               <li>Nota: 83/100</li>
             </ul>
           </article>
-
-          <article class="cartaproducto">
-            <img
-              src="img/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_.jpg"
-              alt="Cafetera Nespresso Vertuo"
-            />
-            <h2>Sinners</h2>
-            <p>La musica tiene sus peligros, y la noche es larga.</p>
+          
+          <article class="cartaproducto" tabindex="0">
+            <img src="img/sinners.jpg" alt="pelicula4">
+            <h2>Sinners </h2>
+            <p> La música tiene sus peligros, y la noche es larga. </p>
             <ul>
               <li>Precio: 9.99€</li>
               <li>Año: 2025</li>
               <li>Nota 84/100</li>
             </ul>
           </article>
-
-          <article class="cartaproducto">
-            <img
-              src="img/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-              alt="Aspiradora robot Roomba i7"
-            />
+         
+          <article class="cartaproducto" tabindex="0">
+            <img src="img/kpopdemonhunters.jpg" alt="pelicula5">
             <h2>K-POP DEMON HUNTERS</h2>
-            <p>
-              A día de hoy los ejecutivos de Sony se siguen tirando de los
-              pelos.
-            </p>
+            <p>A día de hoy los ejecutivos de Sony se siguen tirando de los pelos.</p>
             <ul>
               <li>Precio: 9.99€</li>
               <li>Año: 2025</li>
               <li>Nota: 78/100</li>
             </ul>
           </article>
-
-          <article class="cartaproducto">
-            <img
-              src="img/MV5BNmYxOTAzZWYtOGI3Yi00ODc3LTk5ZjYtZTY0MzVkZTg3YmRiXkEyXkFqcGc@._V1_.jpg"
-              alt="Monitor LG UltraFine 4K"
-            />
+      
+          <article class="cartaproducto" tabindex="0">
+            <img src="img/pesadilla.jpg" alt="pelicula6">
             <h2>Pesadilla antes de Navidad</h2>
-            <p>¿Que es, que es? ¿Que es lo que puede ser?</p>
+            <p> ¿Qué es, qué es? ¿Qué es lo que puede ser?</p>
             <ul>
               <li>Precio: 1.99€</li>
               <li>Año: 1993</li>
@@ -166,125 +132,152 @@
           </article>
         </section>
 
-        <section class="tabla-resumen">
+        <!-- FORMULARIO EN LUGAR DE LA TABLA -->
+        <section class="formulario-solicitud">
           <header>
-            <h1>Informacion de nuestras recomendaciones de peliculas:</h1>
+            <h1>Solicitud de Información</h1>
+            <p>Complete el formulario para recibir información sobre nuestros productos destacados</p>
           </header>
-          <table class="tabla-productos">
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Precio Compra</th>
-                <th>Año</th>
-                <th>Nota Critica:</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Weapons</td>
-                <td>7.99€</td>
-                <td>2025</td>
-                <td>81/100</td>
-              </tr>
-              <tr>
-                <td>The Simpsons movie</td>
-                <td>3.99€</td>
-                <td>2007</td>
-                <td>80/10</td>
-              </tr>
-              <tr>
-                <td>Blade Runner 2049</td>
-                <td>5.99€</td>
-                <td>2017</td>
-                <td>83/100</td>
-              </tr>
-              <tr>
-                <td>Sinners</td>
-                <td>9.99€</td>
-                <td>2025</td>
-                <td>84/100</td>
-              </tr>
-              <tr>
-                <td>KPOPDEMONHUNTERS</td>
-                <td>9.99€</td>
-                <td>2025</td>
-                <td>78/100</td>
-              </tr>
-              <tr>
-                <td>Pesadilla antes de Navidad</td>
-                <td>1.99€</td>
-                <td>1993</td>
-                <td>82/100</td>
-              </tr>
-            </tbody>
-          </table>
+          
+          <form id="formulario-info">
+            <!-- A. Datos Personales -->
+            <fieldset class="datos-personales">
+              <legend>Datos Personales (Obligatorios)</legend>
+              
+              <div class="campo-grupo">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" maxlength="15" required 
+                       placeholder="Máximo 15 caracteres"
+                       title="Nombre con máximo 15 caracteres">
+                <span class="texto-ayuda">Máximo 15 caracteres</span>
+              </div>
+              
+              <div class="campo-grupo">
+                <label for="apellidos">Apellidos *</label>
+                <input type="text" id="apellidos" name="apellidos" maxlength="30" required
+                       placeholder="Máximo 30 caracteres"
+                       title="Apellidos con máximo 30 caracteres">
+                <span class="texto-ayuda">Máximo 30 caracteres</span>
+              </div>
+              
+              <div class="campo-grupo">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" required
+                       pattern="[0-9]{9}" placeholder="Ej: 612345678"
+                       title="9 dígitos numéricos">
+                <span class="texto-ayuda">9 dígitos numéricos</span>
+              </div>
+              
+              <div class="campo-grupo">
+                <label for="fecha-nacimiento">Fecha de Nacimiento *</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required
+                       min="1900-01-01" max="2023-12-31"
+                       title="Seleccione su fecha de nacimiento">
+                <span class="texto-ayuda">Formato: DD/MM/AAAA</span>
+              </div>
+            </fieldset>
+
+            <!-- B. Tipos de Productos -->
+            <fieldset class="tipos-productos">
+              <legend>Productos de Interés (Opcional)</legend>
+              
+              <div class="categoria-grupo">
+                <label for="categoria-peliculas">Películas</label>
+                <select id="categoria-peliculas" name="categoria-peliculas">
+                  <option value="">Seleccione una película</option>
+                  <option value="accion">Acción y Aventuras</option>
+                  <option value="ciencia-ficcion">Ciencia Ficción</option>
+                  <option value="drama">Drama</option>
+                </select>
+              </div>
+              
+              <div class="categoria-grupo">
+                <label for="categoria-libros">Libros</label>
+                <select id="categoria-libros" name="categoria-libros">
+                  <option value="">Seleccione un género literario</option>
+                  <option value="novela">Novela</option>
+                  <option value="ensayo">Ensayo</option>
+                </select>
+              </div>
+              
+              <div class="categoria-grupo">
+                <label for="categoria-musica">Música</label>
+                <select id="categoria-musica" name="categoria-musica">
+                  <option value="">Seleccione un género musical</option>
+                  <option value="rock">Rock</option>
+                  <option value="pop">Pop</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <!-- C. Suscripción y Observaciones -->
+            <fieldset class="suscripcion-observaciones">
+              <legend>Suscripción y Observaciones</legend>
+              
+              <div class="campo-grupo">
+                <label class="label-radio">¿Desea suscribirse a nuestro boletín?</label>
+                <div class="radio-grupo">
+                  <label>
+                    <input type="radio" name="suscripcion" value="si" checked>
+                    <span class="radio-custom"></span>
+                    Sí
+                  </label>
+                  <label>
+                    <input type="radio" name="suscripcion" value="no">
+                    <span class="radio-custom"></span>
+                    No
+                  </label>
+                </div>
+              </div>
+              
+              <div class="campo-grupo">
+                <label for="observaciones">Observaciones (Opcional)</label>
+                <textarea id="observaciones" name="observaciones" 
+                         rows="5" maxlength="500"
+                         placeholder="Escriba sus observaciones aquí (máximo 500 caracteres)"
+                         title="Máximo 500 caracteres"></textarea>
+                <span class="texto-ayuda">Máximo 500 caracteres</span>
+              </div>
+            </fieldset>
+
+            <!-- D. Botones -->
+            <div class="botones-formulario">
+              <button type="submit" class="btn btn-enviar">Enviar</button>
+              <button type="reset" class="btn btn-cancelar">Cancelar</button>
+            </div>
+          </form>
         </section>
       </section>
     </main>
 
-    <aside lang="en">
+    <aside>
       <h1>Compromiso Sostenible</h1>
-
-      <section class="sostenibilidad">
-        <section class="columna">
-          <article>
-            <h2>Eco-Friendly Books</h2>
-            <p>
-              We promote publishers that use recycled paper and eco-friendly
-              inks to care for the planet.
-            </p>
-          </article>
-          <article>
-            <h2>Responsible Cinema</h2>
-            <p>
-              We encourage films and documentaries that raise environmental and
-              social awareness.
-            </p>
-          </article>
-          <article>
-            <h2>Music with a Cause</h2>
-            <p>
-              We support artists who promote messages of sustainability and
-              respect for nature.
-            </p>
-          </article>
-        </section>
-        <section class="column">
-          <article>
-            <h2>Art and Nature</h2>
-            <p>
-              We promote exhibitions and artistic projects that address
-              environmental issues.
-            </p>
-          </article>
-          <article>
-            <h2>Responsible Cultural Consumption</h2>
-            <p>
-              We encourage conscious consumption of cultural products and the
-              reuse of materials.
-            </p>
-          </article>
-          <article>
-            <h2>Environmental Education</h2>
-            <p>
-              We spread information and host events to educate about
-              sustainability in art and culture.
-            </p>
-          </article>
-        </section>
+      <section class="resumen-sostenibilidad">
+        <h2>Nuestro Compromiso:</h2>
+        <article class="punto-sostenible">
+          <h3>Español / English</h3>
+          <p><strong>Promovemos el uso de materiales ecológicos, como papel reciclado en libros.</strong><br>
+          <em>We promote the use of ecological materials, such as recycled paper in books.</em></p>
+        </article>
+        <article class="punto-sostenible">
+          <p><strong>Fomentamos películas y artistas que generan conciencia ambiental y social.</strong><br>
+          <em>We encourage films and artists that generate environmental and social awareness.</em></p>
+        </article>
       </section>
     </aside>
+    
     <footer>
       <section class="redes-sociales">
-        <p>Siguenos en nuestras redes sociales</p>
+        <p>Síguenos en nuestras redes sociales</p>
         <!-- Logos conseguidos desde https://www.svgrepo.com -->
-        <img src="img/facebook-svgrepo-com.svg" alt="Facebook" />
-        <img src="img/twitter-svgrepo-com.svg" alt="Twitter" />
-        <img src="img/instagram-svgrepo-com.svg" alt="Instagram" />
+        <a href="index.html" aria-label="Facebook"><img src="img/facebook-svgrepo-com.svg" alt="Facebook"></a>
+        <a href="index.html" aria-label="Twitter"><img src="img/twitter-svgrepo-com.svg" alt="Twitter"></a>
+        <a href="index.html" aria-label="Instagram"><img src="img/instagram-svgrepo-com.svg" alt="Instagram"></a>
       </section>
       <section class="derechos-autor">
         <p>&copy; 2025 TuttifruttiReviews. Todos los derechos reservados.</p>
       </section>
+      
     </footer>
   </body>
 </html>
