@@ -17,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 1fr auto auto;
     grid-template-areas:
         "header header"
@@ -617,26 +617,88 @@ footer {
     grid-area: footer;
     display: flex;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 20px;
     z-index: 6;
+    gap: 20px;
 }
 
-/* para bloque superior firstchild */
-footer section:first-child {
+/* Sección de redes sociales */
+footer .redes-sociales {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* para el bloque inferior lastchild */
-footer section:last-child {
+footer .redes-sociales p {
+    margin: 0;
+    font-family: "Alan Sans", sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Sección de accesibilidad */
+footer .accesibilidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Logo WCAG */
+footer .wcag-logo img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+footer .wcag-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Enlace de declaración de accesibilidad */
+footer .declaracion-accesibilidad {
+    text-align: center;
+}
+
+footer .enlace-accesibilidad {
+    color: white;
+    text-decoration: none;
+    font-family: "Alan Sans", sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer .enlace-accesibilidad:hover {
+    background-color: white;
+    color: var(--color-footer);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+footer .enlace-accesibilidad:focus {
+    outline: 3px solid coral;
+    outline-offset: 2px;
+    background-color: white;
+    color: var(--color-footer);
+}
+
+/* Sección de derechos de autor */
+footer .derechos-autor {
     text-align: center;
     padding: 10px 0;
     font-family: "Alan Sans", sans-serif;
     font-size: 0.9rem;
+    color: white;
 }
 
 /* para modificar los svg del footer */
@@ -655,6 +717,54 @@ footer a:focus {
 
 footer a:hover img {
     transform: scale(1.2);
+}
+
+/* ===== BOTÓN IR ARRIBA ===== */
+.parriba {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2272FF;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(34, 114, 255, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estados del botón */
+.parriba:hover {
+    background-color: #1a5fd8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(34, 114, 255, 0.6);
+}
+
+.parriba:focus {
+    outline: 3px solid coral;
+    outline-offset: 2px;
+    background-color: #1a5fd8;
+}
+
+.parriba:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(34, 114, 255, 0.4);
+}
+
+/* Mejorar el icono */
+.parriba i {
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1;
 }
 
 /* ===== MENÚ HAMBURGUESA ===== */
@@ -694,6 +804,199 @@ footer a:hover img {
   background-color: #0056b3;
 }
 
+/* ===== ESTILOS ESPECÍFICOS PARA ACCESIBILIDAD.HTML ===== */
+
+.contenido-accesibilidad {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-accesibilidad h1 {
+    text-align: center;
+    color: #2272FF;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.apartado {
+    margin-bottom: 50px;
+    padding: 30px;
+    border: 2px solid #2272FF;
+    border-radius: 12px;
+    background-color: #F5F7FF;
+}
+
+.apartado h2 {
+    color: #2272FF;
+    border-bottom: 2px solid coral;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* Nivel de conformidad */
+.nivel-wcag {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.logo-wcag {
+    width: 150px;
+    height: auto;
+    border: 3px solid #2272FF;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white;
+}
+
+.info-nivel h3 {
+    color: #2272FF;
+    margin-bottom: 15px;
+}
+
+.info-nivel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-nivel li {
+    padding: 8px 0;
+    font-family: "Alan Sans", sans-serif;
+    font-size: 1.1rem;
+}
+
+/* Medidas de navegación */
+.medidas-navegacion {
+    display: grid;
+    gap: 30px;
+}
+
+.medida {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid coral;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medida h3 {
+    color: #2272FF;
+    margin-bottom: 15px;
+}
+
+.ejemplo-codigo {
+    background: #1a1a1a;
+    color: #f8f8f8;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+.ejemplo-codigo pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.ejemplo-codigo code {
+    color: #64FFDA;
+}
+
+/* Criterios de conformidad */
+.criterios-lista {
+    display: grid;
+    gap: 25px;
+}
+
+.criterio {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #64FFDA;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.criterio h3 {
+    color: #2272FF;
+    margin-bottom: 15px;
+}
+
+.info-criterio p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.ejemplo-contraste {
+    margin-top: 15px;
+}
+
+.color-muestra {
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #333;
+}
+
+/* Principios de Nielsen */
+.principios-lista {
+    display: grid;
+    gap: 25px;
+}
+
+.principio {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #FF6B6B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.principio h3 {
+    color: #2272FF;
+    margin-bottom: 15px;
+}
+
+.principio ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.principio li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Navegación lateral */
+.navegacion-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navegacion-lateral li {
+    margin-bottom: 10px;
+}
+
+.navegacion-lateral a {
+    color: #2272FF;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.navegacion-lateral a:hover {
+    background-color: #2272FF;
+    color: white;
+}
 
 /* ===== DISEÑO RESPONSIVO ===== */
 @media (max-width: 576px) {
@@ -832,5 +1135,98 @@ footer a:hover img {
     .campo-grupo select,
     .campo-grupo textarea {
         padding: 10px;
-    }   
+    }
+    
+    /* Responsive para botón ir arriba */
+    .parriba {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    /* Footer responsive para 576px */
+    footer {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    footer .redes-sociales {
+        gap: 12px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+    }
+    
+    footer .redes-sociales p {
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer .accesibilidad {
+        gap: 20px;
+        padding: 12px 0;
+        flex-direction: column;
+    }
+    
+    footer .wcag-logo img {
+        width: 70px;
+    }
+    
+    footer .enlace-accesibilidad {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    footer .derechos-autor {
+        font-size: 0.75rem;
+    }
+    
+    footer img:not(.wcag-logo img) {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* Responsive para página accesibilidad */
+    .contenido-accesibilidad {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .contenido-accesibilidad h1 {
+        font-size: 2rem;
+    }
+    
+    .apartado {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .apartado h2 {
+        font-size: 1.5rem;
+    }
+    
+    .nivel-wcag {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .logo-wcag {
+        width: 120px;
+    }
+    
+    .medida, .criterio, .principio {
+        padding: 15px;
+    }
+    
+    .ejemplo-codigo {
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+    
+    .info-nivel li {
+        font-size: 1rem;
+    }
 }

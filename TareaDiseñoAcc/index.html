@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
     <link rel="stylesheet" href="css/tarea.css" />
   </head>
-  <body>
+  <body id="top">
     <header id="">
       <h1>TuttifruttiReviews</h1>
       <a href="index.html" aria-label="Volver a la página de inicio">
@@ -267,6 +267,7 @@
     </aside>
     
     <footer>
+      <!-- Sección de redes sociales -->
       <section class="redes-sociales">
         <p>Síguenos en nuestras redes sociales</p>
         <!-- Logos conseguidos desde https://www.svgrepo.com -->
@@ -274,14 +275,32 @@
         <a href="index.html" aria-label="Twitter"><img src="img/twitter-svgrepo-com.svg" alt="Twitter"></a>
         <a href="index.html" aria-label="Instagram"><img src="img/instagram-svgrepo-com.svg" alt="Instagram"></a>
       </section>
+
+      <!-- Sección de accesibilidad -->
+      <section class="accesibilidad">
+        <div class="wcag-logo">
+          <a href="https://www.w3.org/WAI/WCAG2A-Conformance"
+   title="Explanation of WCAG 2 Level A Conformance">
+  <img height="32" width="88"
+       src="https://www.w3.org/WAI/WCAG22/wcag2.2A"
+       alt="Level A conformance,
+            W3C WAI Web Content Accessibility Guidelines 2.2"></a>
+        </div>
+        <div class="declaracion-accesibilidad">
+          <a href="accesibilidad.html" class="enlace-accesibilidad">
+            Declaración de Accesibilidad
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección de derechos de autor -->
       <section class="derechos-autor">
         <p>&copy; 2025 TuttifruttiReviews. Todos los derechos reservados.</p>
       </section>
- 
-
     </footer>
-    <a id="parrriba" class="parriba" href="">
-  <i class="fas fa-level-up-alt">⬆</i>
-</a>
+    
+    <a id="parrriba" class="parriba" href="#top" aria-label="Ir al inicio de la página">
+      <i class="fas fa-level-up-alt">⬆</i>
+    </a>
   </body>
 </html>
