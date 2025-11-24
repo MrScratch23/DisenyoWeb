@@ -6,29 +6,26 @@
     <title>Tarea - TuttifruttiReviews</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
     <link rel="stylesheet" href="css/tarea.css" />
+    <script src="menu.js" defer></script>
   </head>
   <body id="top">
     <!-- Skip link para accesibilidad -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     
     <header>
-      <h1>TuttifruttiReviews</h1>
       <a href="index.html" aria-label="Volver a la página de inicio">
         <img src="img/29039975_7492456.svg" alt="Logo TuttifruttiReviews - Volver al inicio" />
       </a>
+      <h1>TuttifruttiReviews</h1>
+      <!-- cambie el boton para que en vez de css fuera javascript, ya que aun no logre hacerlo funcionar del todo con css-->
+      <button class="menu-hamburguesa" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
-    <!-- Checkbox para menú hamburguesa -->
-    <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
-
-    <!-- LABEL CORREGIDO: Ahora tiene contenido textual -->
-    <label for="menu-toggle" class="burgesasinpatatas">
-      <span class="sr-only">Abrir menú de navegación</span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
- <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html" accesskey="I">Inicio</a></li>
         <li><a href="https://share.google/xJvSk7JmkBRhcnQJU" accesskey="L">Libros</a></li>
@@ -42,11 +39,11 @@
       <section id="producto-promocion">
         <h1 class="titulo-promocion">PELICULA DE LA SEMANA</h1>
         <article class="promocion-contenido">
-          <section class="imagen-contenedor">
+          <div class="imagen-contenedor">
             <img src="img/superman.jpg" alt="Póster de la película Superman - David Corenswet como Clark Kent">
             <p class="info-promocion">Precio Compra/Alquiler: $7.99</p>
-          </section>
-          <section class="info-lateral">
+          </div>
+          <div class="info-lateral">
             <h2>Superman</h2>
             <p>Año: 2025</p>
             <p>Director: James Gunn</p>
@@ -62,14 +59,14 @@
             </ul>
             <h3>Nota:</h3>
             <p>68/100</p>
-          </section>
+          </div>
         </article>
       </section>
 
       <section id="producto-destacado">
-          <h1>Películas destacadas que recomendamos este mes:</h1>
+        <h1>Películas destacadas que recomendamos este mes:</h1>
         
-        <section class="cartas">
+        <div class="cartas">
           <article class="cartaproducto" tabindex="0">
             <img src="img/weapons.jpg" alt="Póster de Weapons - Película de terror de Zach Cregger">
             <h2>Weapons</h2>
@@ -135,123 +132,122 @@
               <li>Nota: 82/100</li>
             </ul>
           </article>
-        </section>
+        </div>
+      </section>
 
-        <!-- formulario -->
-        <section class="formulario-solicitud">
-          <header>
-            <h1>Solicitud de Información</h1>
-            <p>Complete el formulario para recibir información sobre nuestros productos destacados</p>
-          </header>
-          
-          <form id="formulario-info">
-            <!-- datos personales -->
-            <fieldset class="datos-personales">
-              <legend>Datos Personales (Obligatorios)</legend>
-              
-              <div class="campo-grupo">
-                <label for="nombre">Nombre *</label>
-                <input type="text" id="nombre" name="nombre" maxlength="15" required 
-                       placeholder="Máximo 15 caracteres"
-                       title="Nombre con máximo 15 caracteres">
-                <span class="texto-ayuda">Máximo 15 caracteres</span>
-              </div>
-              
-              <div class="campo-grupo">
-                <label for="apellidos">Apellidos *</label>
-                <input type="text" id="apellidos" name="apellidos" maxlength="30" required
-                       placeholder="Máximo 30 caracteres"
-                       title="Apellidos con máximo 30 caracteres">
-                <span class="texto-ayuda">Máximo 30 caracteres</span>
-              </div>
-              
-              <div class="campo-grupo">
-                <label for="telefono">Teléfono *</label>
-                <input type="tel" id="telefono" name="telefono" required
-                       pattern="[0-9]{9}" placeholder="Ej: 612345678"
-                       title="9 dígitos numéricos">
-                <span class="texto-ayuda">9 dígitos numéricos</span>
-              </div>
-              
-              <div class="campo-grupo">
-                <label for="fecha-nacimiento">Fecha de Nacimiento *</label>
-                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required
-                       min="1900-01-01" max="2023-12-31"
-                       title="Seleccione su fecha de nacimiento">
-                <span class="texto-ayuda">Formato: DD/MM/AAAA</span>
-              </div>
-            </fieldset>
-
-            <!-- tipos de productos -->
-            <fieldset class="tipos-productos">
-              <legend>Productos de Interés (Opcional)</legend>
-              
-              <div class="categoria-grupo">
-                <label for="categoria-peliculas">Películas</label>
-                <select id="categoria-peliculas" name="categoria-peliculas">
-                  <option value="">Seleccione una película</option>
-                  <option value="accion">Acción y Aventuras</option>
-                  <option value="ciencia-ficcion">Ciencia Ficción</option>
-                  <option value="drama">Drama</option>
-                </select>
-              </div>
-              
-              <div class="categoria-grupo">
-                <label for="categoria-libros">Libros</label>
-                <select id="categoria-libros" name="categoria-libros">
-                  <option value="">Seleccione un género literario</option>
-                  <option value="novela">Novela</option>
-                  <option value="ensayo">Ensayo</option>
-                </select>
-              </div>
-              
-              <div class="categoria-grupo">
-                <label for="categoria-musica">Música</label>
-                <select id="categoria-musica" name="categoria-musica">
-                  <option value="">Seleccione un género musical</option>
-                  <option value="rock">Rock</option>
-                  <option value="pop">Pop</option>
-                </select>
-              </div>
-            </fieldset>
-
-            <!-- seccion para suscribirse -->
-            <fieldset class="suscripcion-observaciones">
-              <legend>Suscripción y Observaciones</legend>
-              
-              <div class="campo-grupo">
-                <span class="label-radio">¿Desea suscribirse a nuestro boletín?</span>
-                <div class="radio-grupo">
-                  <label for="suscripcion-si">
-                    <input type="radio" id="suscripcion-si" name="suscripcion" value="si" checked>
-                    <span class="radio-custom"></span>
-                    Sí
-                  </label>
-                  <label for="suscripcion-no">
-                    <input type="radio" id="suscripcion-no" name="suscripcion" value="no">
-                    <span class="radio-custom"></span>
-                    No
-                  </label>
-                </div>
-              </div>
-              
-              <div class="campo-grupo">
-                <label for="observaciones">Observaciones (Opcional)</label>
-                <textarea id="observaciones" name="observaciones" 
-                         rows="5" maxlength="500"
-                         placeholder="Escriba sus observaciones aquí (máximo 500 caracteres)"
-                         title="Máximo 500 caracteres"></textarea>
-                <span class="texto-ayuda">Máximo 500 caracteres</span>
-              </div>
-            </fieldset>
-
-            <!-- botones del formulario-->
-            <div class="botones-formulario">
-              <button type="submit" class="btn btn-enviar">Enviar</button>
-              <button type="reset" class="btn btn-cancelar">Cancelar</button>
+      <section id="solicitud-informacion">
+        <header>
+          <h1>Solicitud de Información</h1>
+          <p>Complete el formulario para recibir información sobre nuestros productos destacados</p>
+        </header>
+        
+        <form id="formulario-info">
+          <!-- datos personales -->
+          <fieldset class="datos-personales">
+            <legend>Datos Personales (Obligatorios)</legend>
+            
+            <div class="campo-grupo">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" maxlength="15" required 
+                     placeholder="Máximo 15 caracteres"
+                     title="Nombre con máximo 15 caracteres">
+              <span class="texto-ayuda">Máximo 15 caracteres</span>
             </div>
-          </form>
-        </section>
+            
+            <div class="campo-grupo">
+              <label for="apellidos">Apellidos *</label>
+              <input type="text" id="apellidos" name="apellidos" maxlength="30" required
+                     placeholder="Máximo 30 caracteres"
+                     title="Apellidos con máximo 30 caracteres">
+              <span class="texto-ayuda">Máximo 30 caracteres</span>
+            </div>
+            
+            <div class="campo-grupo">
+              <label for="telefono">Teléfono *</label>
+              <input type="tel" id="telefono" name="telefono" required
+                     pattern="[0-9]{9}" placeholder="Ej: 612345678"
+                     title="9 dígitos numéricos">
+              <span class="texto-ayuda">9 dígitos numéricos</span>
+            </div>
+            
+            <div class="campo-grupo">
+              <label for="fecha-nacimiento">Fecha de Nacimiento *</label>
+              <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required
+                     min="1900-01-01" max="2023-12-31"
+                     title="Seleccione su fecha de nacimiento">
+              <span class="texto-ayuda">Formato: DD/MM/AAAA</span>
+            </div>
+          </fieldset>
+
+          <!-- tipos de productos -->
+          <fieldset class="tipos-productos">
+            <legend>Productos de Interés (Opcional)</legend>
+            
+            <div class="categoria-grupo">
+              <label for="categoria-peliculas">Películas</label>
+              <select id="categoria-peliculas" name="categoria-peliculas">
+                <option value="">Seleccione una película</option>
+                <option value="accion">Acción y Aventuras</option>
+                <option value="ciencia-ficcion">Ciencia Ficción</option>
+                <option value="drama">Drama</option>
+              </select>
+            </div>
+            
+            <div class="categoria-grupo">
+              <label for="categoria-libros">Libros</label>
+              <select id="categoria-libros" name="categoria-libros">
+                <option value="">Seleccione un género literario</option>
+                <option value="novela">Novela</option>
+                <option value="ensayo">Ensayo</option>
+              </select>
+            </div>
+            
+            <div class="categoria-grupo">
+              <label for="categoria-musica">Música</label>
+              <select id="categoria-musica" name="categoria-musica">
+                <option value="">Seleccione un género musical</option>
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- seccion para suscribirse -->
+          <fieldset class="suscripcion-observaciones">
+            <legend>Suscripción y Observaciones</legend>
+            
+            <div class="campo-grupo">
+              <span class="label-radio">¿Desea suscribirse a nuestro boletín?</span>
+              <div class="radio-grupo">
+                <label for="suscripcion-si">
+                  <input type="radio" id="suscripcion-si" name="suscripcion" value="si" checked>
+                  <span class="radio-custom"></span>
+                  Sí
+                </label>
+                <label for="suscripcion-no">
+                  <input type="radio" id="suscripcion-no" name="suscripcion" value="no">
+                  <span class="radio-custom"></span>
+                  No
+                </label>
+              </div>
+            </div>
+            
+            <div class="campo-grupo">
+              <label for="observaciones">Observaciones (Opcional)</label>
+              <textarea id="observaciones" name="observaciones" 
+                       rows="5" maxlength="500"
+                       placeholder="Escriba sus observaciones aquí (máximo 500 caracteres)"
+                       title="Máximo 500 caracteres"></textarea>
+              <span class="texto-ayuda">Máximo 500 caracteres</span>
+            </div>
+          </fieldset>
+
+          <!-- botones del formulario-->
+          <div class="botones-formulario">
+            <button type="submit" class="btn btn-enviar">Enviar</button>
+            <button type="reset" class="btn btn-cancelar">Cancelar</button>
+          </div>
+        </form>
       </section>
     </main>
 
@@ -302,5 +298,6 @@
     <a id="parrriba" class="parriba" href="#top" aria-label="Ir al inicio de la página">
       ⬆
     </a>
+
   </body>
 </html>

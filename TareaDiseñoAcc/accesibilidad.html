@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accesibilidad - TuttifruttiReviews</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/tarea.css" />
+    <link rel="stylesheet" href="css/accesibilidad.css" />
+    <script src="menu.js" defer></script>
   </head>
   <body id="top">
+    <!-- Skip link para accesibilidad como pide examinator -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
     <header>
-      <h1>TuttifruttiReviews</h1>
       <a href="index.html" aria-label="Volver a la página de inicio">
         <img src="img/29039975_7492456.svg" alt="Logo TuttifruttiReviews - Volver al inicio" />
       </a>
+      <h1>TuttifruttiReviews</h1>
+      <!-- Cambie el menu para hacerlo con javascript, ya que con el css aun no he conseguido que sea funcional del todo-->
+      <button class="menu-hamburguesa" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
-    <!-- Checkbox con id para enlazar con el label -->
-    <input type="checkbox" id="menu-toggle" class="burgesasinpatatas" />
-
-      <label for="menu-toggle" class="burgesasinpatatas">
-      <span class="sr-only">Abrir menú de navegación</span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
- <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html" accesskey="I">Inicio</a></li>
         <li><a href="https://share.google/xJvSk7JmkBRhcnQJU" accesskey="L">Libros</a></li>
@@ -34,11 +35,11 @@
       </ul>
     </nav>
 
-    <main>
+    <main id="main-content">
       <section class="contenido-accesibilidad">
         <h1>Declaración de Accesibilidad</h1>
         
-        <!-- nivel de conformidad (algo inflado) -->
+        <!-- nivel de conformidad -->
         <section class="apartado" id="nivel-conformidad">
           <h2>A) Nivel de Conformidad Alcanzado</h2>
           <div class="contenido-apartado">
@@ -152,7 +153,7 @@ nav ul li a:focus {
           </div>
         </section>
 
-        <!-- lo de jakon nielsen, que seguramente sea pariente de leslie nielsen-->
+        <!-- lo de jakob nielsen -->
         <section class="apartado" id="principios-nielsen">
           <h2>E) Principios de Jakob Nielsen</h2>
           <div class="contenido-apartado">
@@ -251,10 +252,9 @@ nav ul li a:focus {
       <!-- Sección de redes sociales -->
       <section class="redes-sociales">
         <p>Síguenos en nuestras redes sociales</p>
-        <!-- Logos conseguidos desde https://www.svgrepo.com -->
-        <a href="index.html" aria-label="Facebook"><img src="img/facebook-svgrepo-com.svg" alt="Facebook"></a>
-        <a href="index.html" aria-label="Twitter"><img src="img/twitter-svgrepo-com.svg" alt="Twitter"></a>
-        <a href="index.html" aria-label="Instagram"><img src="img/instagram-svgrepo-com.svg" alt="Instagram"></a>
+        <a href="https://facebook.com" aria-label="Facebook"><img src="img/facebook-svgrepo-com.svg" alt="Facebook"></a>
+        <a href="https://twitter.com" aria-label="Twitter"><img src="img/twitter-svgrepo-com.svg" alt="Twitter"></a>
+        <a href="https://instagram.com" aria-label="Instagram"><img src="img/instagram-svgrepo-com.svg" alt="Instagram"></a>
       </section>
 
       <!-- Sección de accesibilidad -->
@@ -264,8 +264,7 @@ nav ul li a:focus {
    title="Explanation of WCAG 2 Level A Conformance">
   <img height="32" width="88"
        src="https://www.w3.org/WAI/WCAG22/wcag2.2A"
-       alt="Level A conformance,
-            W3C WAI Web Content Accessibility Guidelines 2.2"></a>
+       alt="Level A conformance, W3C WAI Web Content Accessibility Guidelines 2.2"></a>
         </div>
         <div class="declaracion-accesibilidad">
           <a href="accesibilidad.html" class="enlace-accesibilidad">
@@ -281,7 +280,7 @@ nav ul li a:focus {
     </footer>
     
     <a id="parrriba" class="parriba" href="#top" aria-label="Ir al inicio de la página">
-      <i class="fas fa-level-up-alt">⬆</i>
+      ⬆
     </a>
   </body>
 </html>
