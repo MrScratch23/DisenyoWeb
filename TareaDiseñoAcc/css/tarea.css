@@ -553,11 +553,6 @@ textarea:focus {
     font-family: "Alan Sans", sans-serif;
 }
 
-/* Indicador de campos obligatorios */
-.campo-grupo label[for]:after {
-    content: " *";
-    color: #FF6B6B;
-}
 
 .campo-grupo input,
 .campo-grupo select,
