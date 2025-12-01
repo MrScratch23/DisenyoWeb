@@ -857,7 +857,7 @@ footer a:hover img {
 }
 
 /* ===== DISEÑO RESPONSIVE SOLO 576px ===== */
-@media (max-width: 36rem) {
+@media (max-width: 576px) {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
