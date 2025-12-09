@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba1 - CSS Grid Version</title>
+    <link rel="stylesheet" href="prueba1grid.css">
+</head>
+
+<body>
+        
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="#"><h1>MI LOGO</h1></a>
+            </div>
+        </div>
+        
+        <nav>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>           
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <h3>Menú Lateral</h3>
+            <div class="sidebar-content">
+                <div class="sidebar-item">
+                    <h4>Inicio</h4>
+                    <p>Volver a la página principal</p>
+                </div>
+                <div class="sidebar-item">
+                    <h4>Servicios</h4>
+                    <p>Nuestros servicios disponibles</p>
+                </div>
+                <div class="sidebar-item">
+                    <h4>Proyectos</h4>
+                    <p>Trabajos realizados</p>
+                </div>
+                <div class="sidebar-item">
+                    <h4>Contacto</h4>
+                    <p>Información de contacto</p>
+                </div>
+            </div>
+            <div class="grid-info">
+                Este sidebar usa CSS Grid internamente
+            </div>
+        </aside>
+        
+        <section class="main">
+            <h2>Contenido Principal con CSS Grid</h2>
+            <div class="grid-info">
+                El contenedor de cartas usa: grid-template-columns: repeat(3, 1fr);
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h4>Grid Responsivo</h4>
+                    <p>CSS Grid permite crear layouts complejos con pocas líneas de código.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h4>Dos Dimensiones</h4>
+                    <p>Trabaja con filas y columnas simultáneamente, a diferencia de Flexbox.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Alinación Fácil</h4>
+                    <p>place-items: center alinea horizontal y verticalmente en una línea.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔧</div>
+                    <h4>Grid Template Areas</h4>
+                    <p>Crea layouts semánticos nombrando áreas específicas del grid.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📐</div>
+                    <h4>Control de Espacios</h4>
+                    <p>gap controla el espacio entre filas y columnas simultáneamente.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h4>Auto Placement</h4>
+                    <p>Los elementos se colocan automáticamente en el grid disponible.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📏</div>
+                    <h4>fr Units</h4>
+                    <p>Unidades fraccionales para distribuir espacio proporcionalmente.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h4>Overlapping</h4>
+                    <p>Elementos pueden superponerse fácilmente usando grid lines.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h4>Performance</h4>
+                    <p>Renderizado eficiente incluso con layouts complejos.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <h3>Footer con CSS Grid</h3>
+        <p>Prueba1 - Ejemplo completo con CSS Grid</p>
+        <p>Compara esta versión con la de Flexbox para ver las diferencias</p>
+        <div class="footer-links">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos de servicio</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+</body>
+</html>
