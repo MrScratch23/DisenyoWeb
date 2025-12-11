@@ -1,0 +1,129 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 100px 70px 1fr 80px;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    gap: 15px;
+    padding: 15px;
+    background: #f8fafc;
+    color: #334155;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+header {
+    grid-area: header;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    font-size: 1.8em;
+    color: #3b82f6;
+}
+
+nav {
+    grid-area: nav;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #64748b;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #f1f5f9;
+    color: #3b82f6;
+}
+
+aside {
+    grid-area: aside;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, button {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+footer {
+    grid-area: footer;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    color: #64748b;
+}

@@ -1,0 +1,111 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 100px 40px 1fr 60px;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    gap: 8px;
+    padding: 8px;
+    background: #f8f8f8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    grid-area: header;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #eee;
+}
+
+nav {
+    grid-area: nav;
+    background: white;
+    border-bottom: 2px solid #eee;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    color: #555;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #007acc;
+}
+
+aside {
+    grid-area: aside;
+    background: white;
+    padding: 15px;
+    border-right: 2px solid #eee;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-left: 4px solid #007acc;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 2px solid #eee;
+}
+
+input, button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+
+button {
+    background: #007acc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005a9c;
+}
+
+footer {
+    grid-area: footer;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #eee;
+    color: #666;
+}

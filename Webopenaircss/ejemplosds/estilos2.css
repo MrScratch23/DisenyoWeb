@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px 50px 1fr 80px;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    gap: 10px;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 150px; /* 80px header + 50px nav + 20px gaps */
+}
+
+/* Skip link (oculto hasta que recibe foco) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #4a90e2;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* HEADER FIJO */
+header {
+    grid-area: header;
+    background: #4a90e2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 100;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+/* NAV FIJO */
+nav {
+    grid-area: nav;
+    background: #333;
+    border-radius: 5px;
+    position: fixed;
+    top: 100px; /* 10px top + 80px header + 10px gap */
+    left: 10px;
+    right: 10px;
+    z-index: 100;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+nav a:hover {
+    background: #555;
+}
+
+/* ESTILO PARA ELEMENTOS CON FOCO (MUY IMPORTANTE) */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+.card:focus {
+    outline: 3px solid #ff9900;
+    outline-offset: 2px;
+}
+
+/* Para elementos que no son focusables por defecto pero queremos que lo sean */
+.card:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px #ff9900;
+}
+
+aside {
+    grid-area: aside;
+    background: #f2f2f2;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Elementos en aside que deben ser focusables */
+aside p:focus {
+    background: #e0e0e0;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+/* Sección Principal */
+.seccion-principal {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.imagen-texto {
+    display: flex;
+    gap: 20px;
+}
+
+.imagen-container {
+    flex: 1;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Imagen focusable */
+.imagen-container img:focus {
+    border: 3px solid #ff9900;
+}
+
+.texto-container {
+    flex: 1;
+}
+
+.texto-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.texto-container p {
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Galería */
+.galeria h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.galeria-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 200px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.card-desc {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.card-info {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.card-info p {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.card-info strong {
+    color: #333;
+}
+
+/* Formulario */
+.formulario {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.formulario h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input, textarea, button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+/* Inputs con foco */
+input:focus, textarea:focus {
+    border-color: #4a90e2;
+    background-color: #f0f8ff;
+}
+
+button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover, button:focus {
+    background: #357ae8;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 15px;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 50px auto 1fr 80px;
+        grid-template-areas:
+            "header"
+            "nav"
+            "aside"
+            "main"
+            "footer";
+        padding-top: 150px;
+    }
+    
+    header, nav {
+        left: 10px;
+        right: 10px;
+    }
+    
+    .imagen-texto {
+        flex-direction: column;
+    }
+    
+    .imagen-container img {
+        height: 150px;
+    }
+    
+    .card {
+        width: 160px;
+    }
+    
+    .card img {
+        height: 100px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,144 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Verdana', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 60px 1fr 70px;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    color: #222;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Enfoque visible para accesibilidad */
+:focus {
+    outline: 3px solid #ff9900;
+    outline-offset: 2px;
+}
+
+header {
+    grid-area: header;
+    background: #005a9c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+nav {
+    grid-area: nav;
+    background: #333;
+    border-radius: 5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+
+nav a:hover, nav a:focus {
+    background: #555;
+    border: 2px solid #ff9900;
+}
+
+aside {
+    grid-area: aside;
+    background: #e6f2ff;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #005a9c;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #f8f8f8;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.card h3 {
+    color: #005a9c;
+    margin-bottom: 10px;
+}
+
+form {
+    background: #f0f8ff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #005a9c;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #005a9c;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #005a9c;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px;
+    background: #005a9c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #003366;
+}
+
+button:hover, button:focus {
+    background: #003366;
+}
+
+footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 0.9em;
+}

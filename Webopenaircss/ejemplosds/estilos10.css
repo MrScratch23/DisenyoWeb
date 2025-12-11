@@ -1,0 +1,120 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 80px 50px 1fr 60px;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    gap: 5px;
+    padding: 5px;
+    background: white;
+    color: #111;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+header {
+    grid-area: header;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+nav {
+    grid-area: nav;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #666;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #111;
+}
+
+aside {
+    grid-area: aside;
+    background: white;
+    padding: 15px;
+    border-right: 1px solid #eee;
+    color: #666;
+    font-size: 13px;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background: white;
+}
+
+button {
+    background: #111;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: #333;
+}
+
+footer {
+    grid-area: footer;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 12px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 6 - Accesible</title>
+    <link rel="stylesheet" href="estilos6.css">
+</head>
+<body>
+    <header>
+        <h1>Web Accesible</h1>
+        <p>Navegación con teclado optimizada</p>
+    </header>
+    
+    <nav aria-label="Navegación principal accesible">
+        <ul>
+            <li><a href="#" accesskey="1" tabindex="1">Inicio [1]</a></li>
+            <li><a href="#" accesskey="2" tabindex="2">Servicios [2]</a></li>
+            <li><a href="#" accesskey="3" tabindex="3">Contacto [3]</a></li>
+        </ul>
+    </nav>
+    
+    <aside>
+        <h3>Atajos</h3>
+        <p>Alt+1 Inicio<br>Alt+2 Servicios<br>Alt+3 Contacto</p>
+    </aside>
+    
+    <main>
+        <article class="card">
+            <h3>Artículo 1</h3>
+            <p>Contenido con buen contraste.</p>
+        </article>
+        
+        <article class="card">
+            <h3>Artículo 2</h3>
+            <p>Texto legible y claro.</p>
+        </article>
+        
+        <form>
+            <h2>Formulario Accesible</h2>
+            <label for="nombre6">Nombre (Alt+N):</label>
+            <input type="text" id="nombre6" accesskey="n" tabindex="4" aria-required="true">
+            
+            <label for="email6">Email (Alt+E):</label>
+            <input type="email" id="email6" accesskey="e" tabindex="5" aria-required="true">
+            
+            <button type="submit" accesskey="s" tabindex="6">Enviar (Alt+S)</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>Web Accesible para Todos © 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 120px 70px 1fr 80px;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "aside main"
+        "footer footer";
+    gap: 15px;
+    padding: 15px;
+    background: #f0f5ff;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+header {
+    grid-area: header;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 1.5em;
+}
+
+nav {
+    grid-area: nav;
+    background: #ffd166;
+    border-radius: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background: #ffb142;
+    transform: scale(1.05);
+}
+
+aside {
+    grid-area: aside;
+    background: #a8e6cf;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #ff6b6b;
+}
+
+.card:nth-child(2) {
+    border-top-color: #4ecdc4;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, button {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+button {
+    background: #06d6a0;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #05b888;
+}
+
+footer {
+    grid-area: footer;
+    background: #1a535c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-weight: bold;
+}
