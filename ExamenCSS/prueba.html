@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="examen.css">
+</head>
+<body>
+    <!-- skip to main content link (para accesibilidad) -->
+    <a href="#main-content" class="skip-link" tabindex="1">Saltar al contenido principal</a>
+    
+    <header>
+        <h1>Mi Galería de Fotos</h1>
+    </header>
+    
+    <nav aria-label="Navegación principal">
+        <ul>
+            <!-- Accesibilidad por tabuluador y teclas, no se exactamente como usarlos en diferentes navegadores, el mio funciona con alt + letra, tab index para el tabulador -->
+            <li><a href="#" accesskey="i" tabindex="2">Inicio</a></li>
+            <li><a href="#" accesskey="n" tabindex="3">Naturaleza</a></li>
+            <li><a href="#" accesskey="c" tabindex="4">Ciudades</a></li>
+            <li><a href="#" accesskey="g" tabindex="5">Galería</a></li>
+            <li><a href="#" accesskey="f" tabindex="6">Formulario</a></li>
+        </ul>
+    </nav>
+    
+    <aside>
+        <h3>Categorías</h3>
+        <p tabindex="7">Naturaleza</p>
+        <p tabindex="8">Ciudades</p>
+        <p tabindex="9">Arquitectura</p>
+        <p tabindex="10">Personas</p>
+    </aside>
+    
+    <main id="main-content">
+        <!-- main, imagen, y texto -->
+        <section class="seccion-principal">
+            <div class="imagen-texto">
+                <div class="texto-container">
+                    <h2 tabindex="12">Bienvenido a Mi Galería</h2>
+                    <p tabindex="13">Esta es una colección de mis mejores fotografías tomadas alrededor del mundo. Cada imagen cuenta una historia única.</p>
+                    <p tabindex="14">Me especializo en paisajes naturales y urbanos, capturando momentos especiales en cada lugar que visito.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 9 imagenes con detalle -->
+        <section class="galeria" aria-labelledby="galeria-titulo">
+            <h2 id="galeria-titulo" tabindex="15">Galería de Fotos</h2>
+            <div class="galeria-grid">
+                <!-- Card 1 -->
+                <article class="card" tabindex="16">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" 
+                         alt="Ciudad nocturna de Nueva York con rascacielos iluminados" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Ciudad Nocturna</h3>
+                        <p class="card-desc">Luces de la ciudad por  la noche</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Nueva York, USA</p>
+                            <p><strong>Año:</strong> 2023</p>
+                            <p><strong>Cámara:</strong> Sony A7III</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 2 -->
+                <article class="card" tabindex="17">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" 
+                         alt="Bosque verde en la Selva Negra de Alemania" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Bosque Verde</h3>
+                        <p class="card-desc">Camino en el bosque</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Selva Negra, Alemania</p>
+                            <p><strong>Año:</strong> 2022</p>
+                            <p><strong>Cámara:</strong> Canon EOS R</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 3 -->
+                <article class="card" tabindex="18">
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df" 
+                         alt="Rascacielos modernos en Shanghai, China" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Rascacielos</h3>
+                        <p class="card-desc">Edificios modernos</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Shanghai, China</p>
+                            <p><strong>Año:</strong> 2023</p>
+                            <p><strong>Cámara:</strong> Nikon Z6</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 4 -->
+                <article class="card" tabindex="19">
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" 
+                         alt="Paisaje otoñal en Vermont, USA con árboles de colores" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Otoño</h3>
+                        <p class="card-desc">Colores del otoño</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Vermont, USA</p>
+                            <p><strong>Año:</strong> 2022</p>
+                            <p><strong>Cámara:</strong> Sony A7III</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 5 -->
+                <article class="card" tabindex="20">
+                    <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1" 
+                         alt="Playa paradisíaca en Bali, Indonesia" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Playa</h3>
+                        <p class="card-desc">Arena y mar</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Bali, Indonesia</p>
+                            <p><strong>Año:</strong> 2021</p>
+                            <p><strong>Cámara:</strong> GoPro Hero 9</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 6 -->
+                <article class="card" tabindex="21">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
+                         alt="Montañas nevadas en los Alpes Suizos" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Montañas</h3>
+                        <p class="card-desc">Cumbres nevadas</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Alpes Suizos</p>
+                            <p><strong>Año:</strong> 2023</p>
+                            <p><strong>Cámara:</strong> Canon EOS R5</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 7 -->
+                <article class="card" tabindex="22">
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b" 
+                         alt="Aurora boreal en el cielo nocturno de Noruega" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Aurora</h3>
+                        <p class="card-desc">Aurora boreal</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Noruega</p>
+                            <p><strong>Año:</strong> 2022</p>
+                            <p><strong>Cámara:</strong> Sony A7S III</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 8 -->
+                <article class="card" tabindex="23">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" 
+                         alt="Paisaje natural de la Patagonia Argentina" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Naturaleza</h3>
+                        <p class="card-desc">Paisaje natural</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Patagonia, Argentina</p>
+                            <p><strong>Año:</strong> 2023</p>
+                            <p><strong>Cámara:</strong> Fujifilm X-T4</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 9 -->
+                <article class="card" tabindex="24">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" 
+                         alt="Campo de flores en Holanda" 
+                         loading="lazy">
+                    <div class="card-content">
+                        <h3>Flores</h3>
+                        <p class="card-desc">Campo de flores</p>
+                        <div class="card-info">
+                            <p><strong>Lugar:</strong> Holanda</p>
+                            <p><strong>Año:</strong> 2022</p>
+                            <p><strong>Cámara:</strong> Nikon D850</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- tabla resumen de las fotografias -->
+        <section class="tabla-resumen" aria-labelledby="tabla-titulo">
+            <h2 id="tabla-titulo" tabindex="25">Resumen de Fotografías</h2>
+            <div class="tabla-container">
+                <table>
+                    <caption>Detalles técnicos y de ubicación de las fotografías mostradas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tema</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Cámara</th>
+                            <th scope="col">Categoría</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Ciudad Nocturna</td>
+                            <td>Nueva York, USA</td>
+                            <td>2023</td>
+                            <td>Sony A7III</td>
+                            <td>Ciudades</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Bosque Verde</td>
+                            <td>Selva Negra, Alemania</td>
+                            <td>2022</td>
+                            <td>Canon EOS R</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Rascacielos</td>
+                            <td>Shanghai, China</td>
+                            <td>2023</td>
+                            <td>Nikon Z6</td>
+                            <td>Ciudades</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Otoño</td>
+                            <td>Vermont, USA</td>
+                            <td>2022</td>
+                            <td>Sony A7III</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Playa</td>
+                            <td>Bali, Indonesia</td>
+                            <td>2021</td>
+                            <td>GoPro Hero 9</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Montañas</td>
+                            <td>Alpes Suizos</td>
+                            <td>2023</td>
+                            <td>Canon EOS R5</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Aurora</td>
+                            <td>Noruega</td>
+                            <td>2022</td>
+                            <td>Sony A7S III</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Naturaleza</td>
+                            <td>Patagonia, Argentina</td>
+                            <td>2023</td>
+                            <td>Fujifilm X-T4</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Flores</td>
+                            <td>Holanda</td>
+                            <td>2022</td>
+                            <td>Nikon D850</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- formulario -->
+        <section class="formulario" aria-labelledby="formulario-titulo">
+            <h2 id="formulario-titulo" tabindex="26">Contacto</h2>
+           <form action="" method="post">
+             <label for="nombre">Nombre:</label>
+             <input type="text" id="nombre" name="nombre" required>
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email" required>
+             <label for="password">Contraseña:</label>
+             <input type="password" id="password" name="password" required>
+             <label for="fecha">Fecha de nacimiento:</label>
+             <input type="date" id="fecha" name="fecha">
+             <label for="genero">Género:</label>
+             <select id="genero" name="genero">
+               <option value="masculino">Masculino</option>
+               <option value="femenino">Femenino</option>
+               <option value="otro">Otro</option>
+             </select>
+           </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p tabindex="31">&copy; Ruben Daniel Ternero Molina</p>
+        <div class="footer-links">
+            <a href="#" tabindex="32">Política de privacidad</a>
+            <a href="#" tabindex="33">Términos de uso</a>
+            <a href="#" tabindex="34">Mapa del sitio</a>
+        </div>
+    </footer>
+</body>
+</html>

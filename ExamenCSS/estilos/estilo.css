@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Rubik Maps, regular";
+    src: url(../fuente/fuente_externa.ttf);
+}
+
+
+body {
+    font-family: "Rubik maps";
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "header nav"
+        "main aside";
+    gap: 10px;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 150px; 
+    border: 1px solid black;
+}
+
+/* HEADER FIJO - tamaño normal */
+header {
+    grid-area: header;
+    background: #4a90e2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 100;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px; 
+    border: 1px solid black;
+}
+
+/* NAV FIJO - tamaño normal */
+nav {
+    grid-area: nav;
+    background: orange;
+    border-radius: 5px;
+    position: fixed;
+    top: 100px; /* 10px top + 80px header + 10px gap */
+    left: 10px;
+    right: 10px;
+    z-index: 100;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 50px; /* Tamaño fijo */
+    border: 1px solid black;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul :nth-child(3) {
+    background-color: yellow;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background: #555;
+}
+
+/* Resto del CSS igual que antes */
+aside {
+    grid-area: aside;
+    background: #f2f2f2;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+
+
+.subzona2 {
+    columns: 2;
+}
+
+/* Galería */
+
+
+.galeria-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30%;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 200px;
+    margin: 5px;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+
+
+/* Formulario */
+.formulario {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.formulario h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea, button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #357ae8;
+}
+
+
+
+/* Para móviles */
+@media (max-width: 710px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside";
+        padding-top: 150px;
+    }
+    
+    header, nav {
+        left: 10px;
+        right: 10px;
+    }
+    
+    .imagen-texto {
+        flex-direction: column;
+    }
+    
+    .imagen-container img {
+        height: 150px;
+    }
+    
+    .card {
+        width: 160px;
+    }
+    
+    .card img {
+        height: 100px;
+    }
+
+    .subzona2 {
+        columns: 1;
+    }
+
+    .subzona3 {
+        display: none;
+    }
+}
+

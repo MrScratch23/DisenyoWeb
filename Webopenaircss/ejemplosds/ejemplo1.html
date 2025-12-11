@@ -19,30 +19,25 @@
         </ul>
     </nav>
     
+       
     <aside>
-        <h3>Categorías</h3>
-        <p>Naturaleza</p>
-        <p>Ciudades</p>
-        <p>Arquitectura</p>
-        <p>Personas</p>
+       <section class="formulario" aria-labelledby="formulario-titulo">
+            <h2 id="formulario-titulo" tabindex="26">Contacto</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre1" name="nombre" accesskey="n" tabindex="27" max="30" placeholder="Maximo 30 caracteres" required>
+                  <label for="fecha">Fecha de nacimiento:</label>
+                  <input type="date" id="fecha" name="fecha" required>
+                <label for="mensaje">Escriba el motivo de su consulta:</label>
+                <textarea id="mensaje" name="mensaje" accesskey="m" tabindex="29" rows="3" placeholder="¿Cual es el motivo de su consulta?"></textarea>
+                <button type="button" accesskey="s" tabindex="30">Aceptar</button>
+                <button type="buton" > Cancelar</button>
+            </form>
+        </section>
     </aside>
     
     <main>
-        <!-- Sección Principal con Imagen y Texto al lado -->
-        <section class="seccion-principal">
-            <div class="imagen-texto">
-                <div class="imagen-container">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Paisaje montañoso principal" loading="lazy">
-                </div>
-                <div class="texto-container">
-                    <h2>Bienvenido a Mi Galería</h2>
-                    <p>Esta es una colección de mis mejores fotografías tomadas alrededor del mundo. Cada imagen cuenta una historia única.</p>
-                    <p>Me especializo en paisajes naturales y urbanos, capturando momentos especiales en cada lugar que visito.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Galería de 9 imágenes con info detallada -->
+ 
         <section class="galeria">
             <h2>Galería de Fotos</h2>
             <div class="galeria-grid">
@@ -73,127 +68,16 @@
                         </div>
                     </div>
                 </article>
-                
-                <!-- Card 3 -->
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df" alt="Rascacielos" loading="lazy">
-                    <div class="card-content">
-                        <h3>Rascacielos</h3>
-                        <p class="card-desc">Edificios modernos</p>
-                        <div class="card-info">
-                            <p><strong>Lugar:</strong> Shanghai, China</p>
-                            <p><strong>Año:</strong> 2023</p>
-                            <p><strong>Cámara:</strong> Nikon Z6</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Card 4 -->
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" alt="Paisaje otoñal" loading="lazy">
-                    <div class="card-content">
-                        <h3>Otoño</h3>
-                        <p class="card-desc">Colores del otoño</p>
-                        <div class="card-info">
-                            <p><strong>Lugar:</strong> Vermont, USA</p>
-                            <p><strong>Año:</strong> 2022</p>
-                            <p><strong>Cámara:</strong> Sony A7III</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Card 5 -->
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1" alt="Playa" loading="lazy">
-                    <div class="card-content">
-                        <h3>Playa</h3>
-                        <p class="card-desc">Arena y mar</p>
-                        <div class="card-info">
-                            <p><strong>Lugar:</strong> Bali, Indonesia</p>
-                            <p><strong>Año:</strong> 2021</p>
-                            <p><strong>Cámara:</strong> GoPro Hero 9</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Card 6 -->
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Montañas nevadas" loading="lazy">
-                    <div class="card-content">
-                        <h3>Montañas</h3>
-                        <p class="card-desc">Cumbres nevadas</p>
-                        <div class="card-info">
-                            <p><strong>Lugar:</strong> Alpes Suizos</p>
-                            <p><strong>Año:</strong> 2023</p>
-                            <p><strong>Cámara:</strong> Canon EOS R5</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Card 7 -->
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b" alt="Aurora boreal" loading="lazy">
-                    <div class="card-content">
-                        <h3>Aurora</h3>
-                        <p class="card-desc">Aurora boreal</p>
-                        <div class="card-info">
-                            <p><strong>Lugar:</strong> Noruega</p>
-                            <p><strong>Año:</strong> 2022</p>
-                            <p><strong>Cámara:</strong> Sony A7S III</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Card 8 -->
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Naturaleza" loading="lazy">
-                    <div class="card-content">
-                        <h3>Naturaleza</h3>
-                        <p class="card-desc">Paisaje natural</p>
-                        <div class="card-info">
-                            <p><strong>Lugar:</strong> Patagonia, Argentina</p>
-                            <p><strong>Año:</strong> 2023</p>
-                            <p><strong>Cámara:</strong> Fujifilm X-T4</p>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Card 9 -->
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Flores" loading="lazy">
-                    <div class="card-content">
-                        <h3>Flores</h3>
-                        <p class="card-desc">Campo de flores</p>
-                        <div class="card-info">
-                            <p><strong>Lugar:</strong> Holanda</p>
-                            <p><strong>Año:</strong> 2022</p>
-                            <p><strong>Cámara:</strong> Nikon D850</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
+           
         </section>
         
-        <!-- Formulario -->
-        <section class="formulario">
-            <h2>Contacto</h2>
-            <form>
-                <label for="nombre1">Nombre:</label>
-                <input type="text" id="nombre1" accesskey="n" tabindex="4">
-                
-                <label for="email1">Email:</label>
-                <input type="email" id="email1" accesskey="e" tabindex="5">
-                
-                <label for="mensaje1">Mensaje:</label>
-                <textarea id="mensaje1" accesskey="m" tabindex="6" rows="3"></textarea>
-                
-                <button type="submit" accesskey="s" tabindex="7">Enviar Mensaje</button>
-            </form>
-        </section>
-    </main>
+
     
-    <footer>
-        <p>&copy; 2024 Mi Galería de Fotos</p>
-    </footer>
+   
+
+  <a id="parrriba" class="parriba" href="#top" aria-label="Ir al inicio de la página">
+      ⬆
+    </a>
+
 </body>
 </html>

@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Imágenes</title>
-    <link rel="stylesheet" href="estilos1.css">
+    <link rel="stylesheet" href="estilos2.css">
 </head>
 <body>
-    <!-- Skip to main content link (para accesibilidad) -->
+    <!-- skip to main content link (para accesibilidad) -->
     <a href="#main-content" class="skip-link" tabindex="1">Saltar al contenido principal</a>
     
     <header>
-        <h1>Mi Galería de Fotos</h1>
+        <h1>RUBEN DANIEL TERNERO MOLINA</h1>
     </header>
     
     <nav aria-label="Navegación principal">
         <ul>
-            <li><a href="#" accesskey="i" tabindex="2">Inicio</a></li>
-            <li><a href="#" accesskey="n" tabindex="3">Naturaleza</a></li>
-            <li><a href="#" accesskey="c" tabindex="4">Ciudades</a></li>
-            <li><a href="#" accesskey="g" tabindex="5">Galería</a></li>
-            <li><a href="#" accesskey="f" tabindex="6">Formulario</a></li>
+            <!-- Accesibilidad por tabuluador y teclas, no se exactamente como usarlos en diferentes navegadores, el mio funciona con alt + letra, tab index para el tabulador -->
+            <li><a href="#" accesskey="i" tabindex="2">Compras</a></li>
+            <li><a href="#" accesskey="n" tabindex="3">Ventas</li>
+            <li><a href="#" accesskey="c" tabindex="4">Promociones</a></li>
         </ul>
     </nav>
     
@@ -33,7 +32,7 @@
     </aside>
     
     <main id="main-content">
-        <!-- Sección Principal con Imagen y Texto al lado -->
+        <!-- main, imagen, y texto -->
         <section class="seccion-principal">
             <div class="imagen-texto">
                 <div class="imagen-container">
@@ -50,7 +49,7 @@
             </div>
         </section>
         
-        <!-- Galería de 9 imágenes con info detallada -->
+        <!-- 9 imagenes con detalle -->
         <section class="galeria" aria-labelledby="galeria-titulo">
             <h2 id="galeria-titulo" tabindex="15">Galería de Fotos</h2>
             <div class="galeria-grid">
@@ -61,7 +60,7 @@
                          loading="lazy">
                     <div class="card-content">
                         <h3>Ciudad Nocturna</h3>
-                        <p class="card-desc">Luces de la ciudad por la noche</p>
+                        <p class="card-desc">Luces de la ciudad por  la noche</p>
                         <div class="card-info">
                             <p><strong>Lugar:</strong> Nueva York, USA</p>
                             <p><strong>Año:</strong> 2023</p>
@@ -200,30 +199,124 @@
             </div>
         </section>
         
-        <!-- Formulario -->
+        <!-- tabla resumen de las fotografias -->
+        <section class="tabla-resumen" aria-labelledby="tabla-titulo">
+            <h2 id="tabla-titulo" tabindex="25">Resumen de Fotografías</h2>
+            <div class="tabla-container">
+                <table>
+                    <caption>Detalles técnicos y de ubicación de las fotografías mostradas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tema</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Cámara</th>
+                            <th scope="col">Categoría</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Ciudad Nocturna</td>
+                            <td>Nueva York, USA</td>
+                            <td>2023</td>
+                            <td>Sony A7III</td>
+                            <td>Ciudades</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Bosque Verde</td>
+                            <td>Selva Negra, Alemania</td>
+                            <td>2022</td>
+                            <td>Canon EOS R</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Rascacielos</td>
+                            <td>Shanghai, China</td>
+                            <td>2023</td>
+                            <td>Nikon Z6</td>
+                            <td>Ciudades</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Otoño</td>
+                            <td>Vermont, USA</td>
+                            <td>2022</td>
+                            <td>Sony A7III</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Playa</td>
+                            <td>Bali, Indonesia</td>
+                            <td>2021</td>
+                            <td>GoPro Hero 9</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Montañas</td>
+                            <td>Alpes Suizos</td>
+                            <td>2023</td>
+                            <td>Canon EOS R5</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Aurora</td>
+                            <td>Noruega</td>
+                            <td>2022</td>
+                            <td>Sony A7S III</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Naturaleza</td>
+                            <td>Patagonia, Argentina</td>
+                            <td>2023</td>
+                            <td>Fujifilm X-T4</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Flores</td>
+                            <td>Holanda</td>
+                            <td>2022</td>
+                            <td>Nikon D850</td>
+                            <td>Naturaleza</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- formulario -->
         <section class="formulario" aria-labelledby="formulario-titulo">
-            <h2 id="formulario-titulo" tabindex="25">Contacto</h2>
+            <h2 id="formulario-titulo" tabindex="26">Contacto</h2>
             <form>
                 <label for="nombre1">Nombre:</label>
-                <input type="text" id="nombre1" name="nombre" accesskey="n" tabindex="26" required>
+                <input type="text" id="nombre1" name="nombre" accesskey="n" tabindex="27" required>
                 
                 <label for="email1">Email:</label>
-                <input type="email" id="email1" name="email" accesskey="e" tabindex="27" required>
+                <input type="email" id="email1" name="email" accesskey="e" tabindex="28" required>
                 
                 <label for="mensaje1">Mensaje:</label>
-                <textarea id="mensaje1" name="mensaje" accesskey="m" tabindex="28" rows="3" required></textarea>
+                <textarea id="mensaje1" name="mensaje" accesskey="m" tabindex="29" rows="3" required></textarea>
                 
-                <button type="submit" accesskey="s" tabindex="29">Enviar Mensaje</button>
+                <button type="submit" accesskey="s" tabindex="30">Enviar Mensaje</button>
             </form>
         </section>
     </main>
     
     <footer>
-        <p tabindex="30">&copy; 2024 Mi Galería de Fotos</p>
+        <p tabindex="31">&copy; 2024 Mi Galería de Fotos</p>
         <div class="footer-links">
-            <a href="#" tabindex="31">Política de privacidad</a>
-            <a href="#" tabindex="32">Términos de uso</a>
-            <a href="#" tabindex="33">Mapa del sitio</a>
+            <a href="#" tabindex="32">Política de privacidad</a>
+            <a href="#" tabindex="33">Términos de uso</a>
+            <a href="#" tabindex="34">Mapa del sitio</a>
         </div>
     </footer>
 </body>

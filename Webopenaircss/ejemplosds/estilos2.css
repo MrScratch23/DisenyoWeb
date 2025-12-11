@@ -4,17 +4,16 @@
     box-sizing: border-box;
 }
 
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 200px 1fr;
-    grid-template-rows: 80px 50px 1fr 80px;
+    grid-template-rows: 80px 50px;
     grid-template-areas:
-        "header header"
-        "nav nav"
-        "aside main"
-        "footer footer";
+        "header nav"
+        "main aside";
     gap: 10px;
     padding: 10px;
     max-width: 1200px;
@@ -103,7 +102,7 @@ textarea:focus,
     outline-offset: 2px;
 }
 
-/* Para elementos que no son focusables por defecto pero queremos que lo sean */
+/* para elementos que no son focusables por defecto pero queremos que lo sean */
 .card:focus {
     transform: scale(1.02);
     box-shadow: 0 0 0 3px #ff9900;
@@ -116,7 +115,7 @@ aside {
     border-radius: 5px;
 }
 
-/* Elementos en aside que deben ser focusables */
+
 aside p:focus {
     background: #e0e0e0;
     padding: 5px;

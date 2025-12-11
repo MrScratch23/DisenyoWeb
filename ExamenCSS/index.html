@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen CSS</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <h1>RUBEN DANIEL TERNERO MOLINA</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" accesskey="i" tabindex="1">Compras</a></li>
+            <li><a href="#" accesskey="n" tabindex="2">Ventas</a></li>
+            <li><a href="#" accesskey="c" tabindex="3">Promociones</a></li>
+        </ul>
+    </nav>
+    
+       
+    <aside>
+       <section class="formulario" aria-labelledby="formulario-titulo">
+            <h2 id="formulario-titulo" tabindex="4">Formulario</h2>
+            <form>
+                <fieldset>
+                    <legend>Datos de contacto</legend>
+                <label for="nombre"></label>
+                <input type="text" id="nombre1" name="nombre" accesskey="n" tabindex="5" max="30" placeholder="Maximo 30 caracteres" required>
+                <br>
+                  <label for="fecha"></label>
+                  <input type="date" id="fecha" name="fecha" tabindex="6" required>
+                  <br>
+                <label for="mensaje"></label>
+                <textarea id="mensaje" name="mensaje" accesskey="m" tabindex="7" rows="3" placeholder="¿Cual es el motivo de su consulta?"></textarea>
+                <button type="button" accesskey="s" tabindex="8">Aceptar</button>
+                <button type="buton" > Cancelar</button>
+            </form>
+            </fieldset>
+        </section>
+    </aside>
+    <h2> PRODUCTOS DESTACADOS</h2>
+    <main>
+        <section class="galeria" tabindex="9">
+            <div class="galeria-grid" tabindex="10">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="img/figura.jpeg" alt="Ciudad nocturna" tabindex="10">
+                </article>
+                
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="img/figura.jpeg" alt="Bosque verde" tabindex="11">
+                </article>
+        </section>
+        <article class="subzona2" tabindex="11">
+            <p>Los teléfonos móviles han transformado nuestra vida diaria, facilitando la comunicación instantánea y el acceso a información en cualquier momento. Sin embargo, su uso excesivo también plantea desafíos en términos de distracción y dependencia tecnológica. En la actualidad, equilibrar la conveniencia y la conciencia de su impacto se ha vuelto crucial.</p>
+        </article>
+        <article class="subzona3" tabindex="12">
+            <p lang="en">
+            Mobile phones have transformed our daily lives, enabling instant communication and access to information at any time. However, their excessive use also poses challenges in terms of distraction and technological dependency. Striking a balance between convenience and awareness of their impact has become crucial in today's world.    
+            </p>
+        </article>
+
+
+</main>        
+
+    
+   
+
+ 
+
+</body>
+</html>
