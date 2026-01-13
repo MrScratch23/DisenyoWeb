@@ -6,7 +6,54 @@
     <title>Tarea - TuttifruttiReviews</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
     <link rel="stylesheet" href="css/tarea.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="menu.js" defer></script>
+    <script>
+      // JavaScript para controlar el video
+      function controlarVideo(accion) {
+        const video = document.getElementById('videoPromocional');
+        
+        switch(accion) {
+          case 'play':
+            video.play();
+            break;
+          case 'pause':
+            video.pause();
+            break;
+          case 'subirVolumen':
+            if(video.volume < 1) {
+              video.volume = Math.min(video.volume + 0.1, 1);
+              actualizarIndicadorVolumen();
+            }
+            break;
+          case 'bajarVolumen':
+            if(video.volume > 0) {
+              video.volume = Math.max(video.volume - 0.1, 0);
+              actualizarIndicadorVolumen();
+            }
+            break;
+        }
+      }
+      
+      function actualizarIndicadorVolumen() {
+        const video = document.getElementById('videoPromocional');
+        const indicador = document.getElementById('indicadorVolumen');
+        const porcentaje = Math.round(video.volume * 100);
+        indicador.textContent = `Volumen: ${porcentaje}%`;
+        indicador.setAttribute('aria-valuenow', porcentaje);
+      }
+      
+      // Inicializar cuando el documento esté listo
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('videoPromocional');
+        
+        // Actualizar indicador de volumen cuando cambie
+        video.addEventListener('volumechange', actualizarIndicadorVolumen);
+        
+        // Inicializar indicador de volumen
+        actualizarIndicadorVolumen();
+      });
+    </script>
   </head>
   <body id="top">
     <!-- Skip link para accesibilidad -->
@@ -14,7 +61,7 @@
     
     <header>
       <a href="index.html" aria-label="Volver a la página de inicio">
-        <img src="img/29039975_7492456.svg" alt="Logo TuttifruttiReviews - Volver al inicio" />
+        <img src="img/08_logo.svg" alt="Logo TuttifruttiReviews - Volver al inicio" />
       </a>
       <h1>TuttifruttiReviews</h1>
       <!-- cambie el boton para que en vez de css fuera javascript, ya que aun no logre hacerlo funcionar del todo con css-->
@@ -24,6 +71,7 @@
         <span></span>
       </button>
     </header>
+    
 
     <nav id="main-nav">
       <ul>
@@ -40,7 +88,7 @@
         <h1 class="titulo-promocion">PELICULA DE LA SEMANA</h1>
         <article class="promocion-contenido">
           <div class="imagen-contenedor">
-            <img src="img/superman.jpg" alt="Póster de la película Superman - David Corenswet como Clark Kent">
+            <img src="img/05_composicion.jpg" alt="Póster de la película Superman - David Corenswet como Clark Kent">
             <p class="info-promocion">Precio Compra/Alquiler: $7.99</p>
           </div>
           <div class="info-lateral">
@@ -141,138 +189,108 @@
           <p>Complete el formulario para recibir información sobre nuestros productos destacados</p>
         </header>
         
-        <form id="formulario-info">
-          <!-- datos personales -->
-          <fieldset class="datos-personales">
-            <legend>Datos Personales (Obligatorios)</legend>
-            
-            <div class="campo-grupo">
-              <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" maxlength="15" required 
-                     placeholder="Máximo 15 caracteres"
-                     title="Nombre con máximo 15 caracteres">
-              <span class="texto-ayuda">Máximo 15 caracteres</span>
-            </div>
-            
-            <div class="campo-grupo">
-              <label for="apellidos">Apellidos *</label>
-              <input type="text" id="apellidos" name="apellidos" maxlength="30" required
-                     placeholder="Máximo 30 caracteres"
-                     title="Apellidos con máximo 30 caracteres">
-              <span class="texto-ayuda">Máximo 30 caracteres</span>
-            </div>
-            
-            <div class="campo-grupo">
-              <label for="telefono">Teléfono *</label>
-              <input type="tel" id="telefono" name="telefono" required
-                     pattern="[0-9]{9}" placeholder="Ej: 612345678"
-                     title="9 dígitos numéricos">
-              <span class="texto-ayuda">9 dígitos numéricos</span>
-            </div>
-            
-            <div class="campo-grupo">
-              <label for="fecha-nacimiento">Fecha de Nacimiento *</label>
-              <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required
-                     min="1900-01-01" max="2023-12-31"
-                     title="Seleccione su fecha de nacimiento">
-              <span class="texto-ayuda">Formato: DD/MM/AAAA</span>
-            </div>
-          </fieldset>
+        <!-- seccion de video -->
+        <div class="video-promocional">
+          <h2>Vídeo Promocional</h2>
+          <p>Vea nuestro vídeo promocional para conocer mejor nuestros servicios:</p>
+          <div class="reproductor-video">
+            <video 
+              id="videoPromocional"
+              controls 
+              preload="metadata" 
+              width="100%" 
+              height="auto"
+              poster="img/05_composicion.jpg"
+              aria-labelledby="titulo-video"
+              muted
+              aria-describedby="descripcion-video">
+          
+              <source src="video/01_video.mp4" type="video/mp4">
 
-          <!-- tipos de productos -->
-          <fieldset class="tipos-productos">
-            <legend>Productos de Interés (Opcional)</legend>
+              <source src="video/02_video.mp4" type="video/mp4">
+              
+              <p id="descripcion-video">
+                Vídeo promocional de TuttifruttiReviews mostrando nuestras últimas reseñas, 
+                recomendaciones de películas destacadas y proceso de solicitud de información.
+              </p>
+              
+              <p>
+                Tu navegador no soporta la reproducción de vídeo HTML5. 
+                <a href="video/01_video.mp4">Descarga el vídeo en formato MP4</a> para verlo.
+              </p>
+            </video>
             
-            <div class="categoria-grupo">
-              <label for="categoria-peliculas">Películas</label>
-              <select id="categoria-peliculas" name="categoria-peliculas">
-                <option value="">Seleccione una película</option>
-                <option value="accion">Acción y Aventuras</option>
-                <option value="ciencia-ficcion">Ciencia Ficción</option>
-                <option value="drama">Drama</option>
-              </select>
-            </div>
-            
-            <div class="categoria-grupo">
-              <label for="categoria-libros">Libros</label>
-              <select id="categoria-libros" name="categoria-libros">
-                <option value="">Seleccione un género literario</option>
-                <option value="novela">Novela</option>
-                <option value="ensayo">Ensayo</option>
-              </select>
-            </div>
-            
-            <div class="categoria-grupo">
-              <label for="categoria-musica">Música</label>
-              <select id="categoria-musica" name="categoria-musica">
-                <option value="">Seleccione un género musical</option>
-                <option value="rock">Rock</option>
-                <option value="pop">Pop</option>
-              </select>
-            </div>
-          </fieldset>
-
-          <!-- seccion para suscribirse -->
-          <fieldset class="suscripcion-observaciones">
-            <legend>Suscripción y Observaciones</legend>
-            
-            <div class="campo-grupo">
-              <span class="label-radio">¿Desea suscribirse a nuestro boletín? *</span>
-              <div class="radio-grupo">
-                <label for="suscripcion-si">
-                  <input type="radio" id="suscripcion-si" name="suscripcion" value="si" checked>
-                  <span class="radio-custom"></span>
-                  Sí
-                </label>
-                <label for="suscripcion-no">
-                  <input type="radio" id="suscripcion-no" name="suscripcion" value="no">
-                  <span class="radio-custom"></span>
-                  No
-                </label>
+            <!-- BOTONES DE CONTROL DEL VÍDEO -->
+            <div class="controles-video-personalizados">
+              <h3>Controles del vídeo:</h3>
+              
+              <div class="botones-control">
+                <!-- Botón Reproducir -->
+                <button 
+                  type="button" 
+                  class="btn-control btn-reproducir"
+                  onclick="controlarVideo('play')"
+                  aria-label="Reproducir video">
+                  <i class="fas fa-play"></i> Reproducir
+                </button>
+                
+                <!-- Botón Pausar -->
+                <button 
+                  type="button" 
+                  class="btn-control btn-pausar"
+                  onclick="controlarVideo('pause')"
+                  aria-label="Pausar video">
+                  <i class="fas fa-pause"></i> Pausar
+                </button>
+                
+                <!-- Botón Subir Volumen -->
+                <button 
+                  type="button" 
+                  class="btn-control btn-subir-volumen"
+                  onclick="controlarVideo('subirVolumen')"
+                  aria-label="Subir volumen del video">
+                  <i class="fas fa-volume-up"></i> Subir Volumen
+                </button>
+                
+                <!-- Botón Bajar Volumen -->
+                <button 
+                  type="button" 
+                  class="btn-control btn-bajar-volumen"
+                  onclick="controlarVideo('bajarVolumen')"
+                  aria-label="Bajar volumen del video">
+                  <i class="fas fa-volume-down"></i> Bajar Volumen
+                </button>
+              </div>
+              
+              <!-- Indicador de volumen -->
+              <div class="indicador-volumen">
+                <span id="indicadorVolumen">Volumen: 100%</span>
               </div>
             </div>
-            
-            <div class="campo-grupo">
-              <label for="observaciones">Observaciones (Opcional)</label>
-              <textarea id="observaciones" name="observaciones" 
-                       rows="15"
-                       placeholder="Escriba sus observaciones aquí (15 lineas)"
-                       title="Máximo 15 lineas"></textarea>
-              <span class="texto-ayuda">Máximo 15 lineas</span>
-            </div>
-          </fieldset>
-
-          <!-- botones del formulario-->
-          <div class="botones-formulario">
-            <button type="submit" class="btn btn-enviar">Enviar</button>
-            <button type="reset" class="btn btn-cancelar">Cancelar</button>
           </div>
-        </form>
+        </div>
       </section>
     </main>
 
     <aside>
-      <h1>Compromiso Sostenible</h1>
-      <section class="resumen-sostenibilidad">
-        <h2>Nuestro Compromiso:</h2>
-        <article class="punto-sostenible">
-          <h3>Español / English</h3>
-          <p><strong>Promovemos el uso de materiales ecológicos, como papel reciclado en libros.</strong><br>
-          <em lang="en">We promote the use of ecological materials, such as recycled paper in books.</em></p>
-        </article>
-        <article class="punto-sostenible">
-          <p><strong>Fomentamos películas y artistas que generan conciencia ambiental y social.</strong><br>
-          <em lang="en">We encourage films and artists that generate environmental and social awareness.</em></p>
-        </article>
-      </section>
+      <!-- reproductor de audio -->
+      <audio controls>
+        <source src="./music/01_audio.mp3" type="audio/mp3">
+      </audio>  
     </aside>
     
     <footer>
       <section class="redes-sociales">
         <p>Síguenos en nuestras redes sociales</p>
-        <a href="https://facebook.com" aria-label="Facebook"><img src="img/facebook-svgrepo-com.svg" alt="Facebook"></a>
-        <a href="https://twitter.com" aria-label="Twitter"><img src="img/twitter-svgrepo-com.svg" alt="Twitter"></a>
-        <a href="https://instagram.com" aria-label="Instagram"><img src="img/instagram-svgrepo-com.svg" alt="Instagram"></a>
+        <a href="https://facebook.com" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
       </section>
 
       <section class="accesibilidad">
