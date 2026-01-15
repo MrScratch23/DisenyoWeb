@@ -80,3 +80,48 @@ document.addEventListener('DOMContentLoaded', function() {
     menuButton.setAttribute('aria-label', 'Abrir menú de navegación');
     mainNav.setAttribute('aria-hidden', 'true');
 });
+
+      // JavaScript para controlar el video
+      function controlarVideo(accion) {
+        const video = document.getElementById('videoPromocional');
+        
+        switch(accion) {
+          case 'play':
+            video.play();
+            break;
+          case 'pause':
+            video.pause();
+            break;
+          case 'subirVolumen':
+            if(video.volume < 1) {
+              video.volume = Math.min(video.volume + 0.1, 1);
+              actualizarIndicadorVolumen();
+            }
+            break;
+          case 'bajarVolumen':
+            if(video.volume > 0) {
+              video.volume = Math.max(video.volume - 0.1, 0);
+              actualizarIndicadorVolumen();
+            }
+            break;
+        }
+      }
+      
+      function actualizarIndicadorVolumen() {
+        const video = document.getElementById('videoPromocional');
+        const indicador = document.getElementById('indicadorVolumen');
+        const porcentaje = Math.round(video.volume * 100);
+        indicador.textContent = `Volumen: ${porcentaje}%`;
+        indicador.setAttribute('aria-valuenow', porcentaje);
+      }
+      
+      // Inicializar cuando el documento esté listo
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('videoPromocional');
+        
+        // Actualizar indicador de volumen cuando cambie
+        video.addEventListener('volumechange', actualizarIndicadorVolumen);
+        
+        // Inicializar indicador de volumen
+        actualizarIndicadorVolumen();
+      });
