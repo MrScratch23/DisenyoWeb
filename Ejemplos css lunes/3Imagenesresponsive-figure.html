@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes Responsive</title>
+    <link rel="stylesheet" href="estilos-responsive.css">
+</head>
+<body>
+    <h1>Ejemplos de Imágenes Responsive</h1>
+    
+    <!-- Imagen con srcset y sizes -->
+    <h2>Imagen con srcset</h2>
+    <img src="imagen-pequena.jpg" 
+         srcset="imagen-pequena.jpg 500w, 
+                 imagen-mediana.jpg 1000w, 
+                 imagen-grande.jpg 1500w" 
+         sizes="(max-width: 600px) 480px, 
+                (max-width: 1200px) 800px, 
+                1200px" 
+         alt="Imagen responsive"
+         class="imagen-responsive">
+    
+    <!-- Picture element -->
+    <h2>Elemento Picture</h2>
+    <picture>
+        <source media="(max-width: 600px)" srcset="paisaje-movil.jpg">
+        <source media="(max-width: 1200px)" srcset="paisaje-tablet.jpg">
+        <source media="(min-width: 1201px)" srcset="paisaje-escritorio.jpg">
+        <img src="paisaje-default.jpg" alt="Paisaje adaptable" class="imagen-picture">
+    </picture>
+    
+    <!-- Figure con caption -->
+    <h2>Figure con caption</h2>
+    <figure class="figure-estilizado">
+        <img src="playa.jpg" alt="Panorámica de Playa" class="imagen-figure">
+        <figcaption class="figcaption-estilizado">
+            Panorámica de Playa al atardecer. Fotografía tomada en la costa mediterránea.
+            <span class="creditos">Foto: Juan Pérez</span>
+        </figcaption>
+    </figure>
+</body>
+</html>

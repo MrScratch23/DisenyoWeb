@@ -1,0 +1,54 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Imagen básica */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 20px auto;
+}
+
+/* Imagen con filtros */
+.imagen-filtro {
+    filter: grayscale(50%) brightness(110%) contrast(120%);
+    transition: filter 0.3s ease;
+}
+
+.imagen-filtro:hover {
+    filter: grayscale(0%) brightness(100%) contrast(100%);
+}
+
+/* Imagen con opacidad */
+.imagen-opaca {
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.imagen-opaca:hover {
+    opacity: 1;
+}
+
+/* Contenedor para object-fit */
+.contenedor-imagen {
+    width: 400px;
+    height: 300px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+/* Imagen con object-fit */
+.imagen-ajustada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

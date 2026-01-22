@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Imagen responsive general */
+.imagen-responsive {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 20px 0;
+}
+
+/* Imagen dentro de picture */
+.imagen-picture {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+.imagen-picture:hover {
+    filter: brightness(1.05);
+}
+
+/* Figure estilizado */
+.figure-estilizado {
+    margin: 40px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.figure-estilizado:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen dentro de figure */
+.imagen-figure {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    display: block;
+}
+
+/* Figcaption estilizado */
+.figcaption-estilizado {
+    padding: 15px;
+    text-align: center;
+    font-style: italic;
+    color: #333;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+}
+
+.creditos {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+    font-weight: bold;
+}
