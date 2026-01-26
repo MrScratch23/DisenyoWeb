@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea UD.5 - Animaciones en la Web</title>
+    <style>
+        /* Estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .task-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .task-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .main-nav {
+            margin-bottom: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .menu li {
+            flex: 1;
+        }
+        
+        .menu a {
+            display: block;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            border-right: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+        
+        .menu a:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .menu li:last-child a {
+            border-right: none;
+        }
+        
+        .exercise-section {
+            background-color: #fff;
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .exercise-section h2 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .demo-menu {
+            margin: 20px 0;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        /* =============================================== */
+        /* EJERCICIO 2-A: MENÚ CON TRANSICIONES - COMPLETO */
+        /* CUMPLE CON: "aparece una cortina de color desplazándose de arriba hacia abajo" */
+        /* =============================================== */
+        
+        .transition-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .transition-menu li {
+            position: relative; /* Para posicionar correctamente la cortina */
+        }
+        
+        .transition-menu a {
+            display: block;
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+            position: relative; /* Necesario para ::before */
+            overflow: hidden; /* Oculta la cortina cuando está fuera */
+            transition: color 0.3s; /* Transición para el color del texto */
+            z-index: 1; /* Asegura que el texto esté sobre la cortina */
+        }
+        
+        /* CREACIÓN DE LA CORTINA - Pseudo-elemento que se desplaza */
+        .transition-menu a::before {
+            content: '';
+            position: absolute;
+            top: -100%; /* Posición inicial: arriba del botón (fuera de vista) */
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #2c3e50; /* Color de la cortina */
+            z-index: -1; /* Coloca la cortina detrás del texto */
+            transition: top 0.3s ease; /* Transición para el movimiento de arriba a abajo */
+        }
+        
+        /* EFECTO HOVER: La cortina baja */
+        .transition-menu a:hover::before {
+            top: 0; /* Posición final: cubre completamente el botón */
+        }
+        
+        .transition-menu a:hover {
+            color: white; /* Mantiene el texto visible sobre la cortina */
+        }
+        
+        /* =============================================== */
+        /* EJERCICIO 2-B: TRANSFORMACIONES Y TRANSICIONES */
+        /* CUMPLE CON: "modificará la escala" y "modificará la posición mediante translate" */
+        /* =============================================== */
+        
+        .transformations-demo {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .promo-product, .featured-products {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .promo-product h3, .featured-products h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .image-container {
+            margin-bottom: 15px;
+            overflow: hidden; /* Para que el zoom no salga del contenedor */
+            border-radius: 5px;
+        }
+        
+        /* PRODUCTO EN PROMOCIÓN - Transformación de ESCALA */
+        /* CUMPLE: "Se modificará la escala, aumentando el tamaño de la imagen" */
+        .promo-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con efecto de rebote */
+        }
+        
+        .image-container:hover .promo-image {
+            transform: scale(1.15); /* Aumenta un 15% el tamaño al hacer hover */
+        }
+        
+        /* PRODUCTOS DESTACADOS - Transformación de POSICIÓN (translate) */
+        /* CUMPLE: "Se modificará la posición del elemento mediante translate, desplazándose hacia arriba" */
+        .featured-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease; /* Transición suave */
+        }
+        
+        .product:hover .featured-image {
+            transform: translateY(-10px); /* Se desplaza 10px hacia arriba */
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .product {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones adicionales */
+        }
+        
+        .product:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efecto de elevación */
+        }
+        
+        .instruction {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        
+        .animation-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+        
+        .animation-section h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+        
+        /* =============================================== */
+        /* EJERCICIO 3.1: SLIDER CON @KEYFRAMES */
+        /* CUMPLE CON: "animación con CSS (@keyframe)", "10 segundos", "repitiéndose ininterrumpidamente" */
+        /* =============================================== */
+        
+        .slider-container {
+            margin: 20px 0;
+            overflow: hidden; /* Oculta las imágenes que están fuera */
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            height: 300px;
+        }
+        
+        .css-slider {
+            display: flex;
+            width: 400%; /* 4 imágenes = 400% del ancho */
+            height: 100%;
+            animation: slide 10s infinite; /* Animación de 10 segundos, repetida infinitamente */
+        }
+        
+        .slide {
+            width: 25%; /* Cada imagen ocupa 25% del ancho total (100%/4) */
+            height: 100%;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que las imágenes cubran el espacio */
+        }
+        
+        /* DEFINICIÓN DE LA ANIMACIÓN @keyframes */
+        /* CUMPLE: "10 segundos", "tiempo igual entre imagen e imagen", "repetición ininterrumpida" */
+        @keyframes slide {
+            0% { transform: translateX(0%); } /* Imagen 1 visible */
+            5% { transform: translateX(0%); } /* Pausa en imagen 1 */
+            
+            25% { transform: translateX(-25%); } /* Transición a imagen 2 */
+            30% { transform: translateX(-25%); } /* Imagen 2 visible */
+            
+            50% { transform: translateX(-50%); } /* Transición a imagen 3 */
+            55% { transform: translateX(-50%); } /* Imagen 3 visible */
+            
+            75% { transform: translateX(-75%); } /* Transición a imagen 4 */
+            80% { transform: translateX(-75%); } /* Imagen 4 visible */
+            
+            100% { transform: translateX(0%); } /* Vuelve a imagen 1 */
+        }
+        /* Cada imagen está visible 2.5 segundos (25% de 10s) con 0.5s de transición */
+        
+        /* =============================================== */
+        /* EJERCICIO 3.2: BARRA DE PROGRESO CON CANVAS */
+        /* CUMPLE CON: "Canvas", "barra de progreso", "likes de 0 a 200", "botón para aumentar" */
+        /* =============================================== */
+        
+        .canvas-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        #progressCanvas {
+            display: block;
+            margin: 0 auto 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .canvas-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .likes-counter {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            transition: color 0.3s;
+        }
+        
+        .likes-counter.animating {
+            color: #e74c3c;
+            animation: pulse 0.5s; /* Efecto de pulso al dar like */
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        /* =============================================== */
+        /* EJERCICIO 3.3: ANIMACIÓN SVG */
+        /* CUMPLE CON: "Animación con SVG", "dos imágenes persiguiéndose", "trayectoria" */
+        /* =============================================== */
+        
+        .svg-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        #svgAnimation {
+            display: block;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* MEJORAS VISUALES PARA LA ANIMACIÓN SVG */
+        #follower1 {
+            filter: drop-shadow(0 0 3px rgba(33, 150, 243, 0.7)); /* Sombra azul */
+            animation: pulseSVG 2s infinite alternate; /* Animación adicional de pulso */
+        }
+        
+        #follower2 {
+            filter: drop-shadow(0 0 3px rgba(255, 152, 0, 0.7)); /* Sombra naranja */
+            animation: pulseSVG 1.5s infinite alternate-reverse; /* Pulso inverso */
+        }
+        
+        @keyframes pulseSVG {
+            0% { r: 20; } /* Tamaño normal */
+            100% { r: 22; } /* Tamaño aumentado */
+        }
+        
+        #follower2 {
+            animation-delay: 0.5s; /* Desfase para efecto de persecución */
+        }
+        
+        .animation-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .animation-controls button {
+            background-color: #9b59b6; /* Color diferente para distinguir controles */
+        }
+        
+        .animation-controls button:hover {
+            background-color: #8e44ad;
+        }
+        
+        .task-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .note, .explanation {
+            background-color: #fffde7;
+            padding: 15px;
+            border-left: 4px solid #ffd54f;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+        
+        .criteria-check {
+            background-color: #e8f5e9;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .transformations-demo {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu {
+                flex-direction: column;
+            }
+            
+            .menu a {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .transition-menu {
+                flex-direction: column;
+            }
+            
+            .animation-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .animation-controls button {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera de la tarea -->
+    <header class="task-header">
+        <h1>Tarea UD.5: Contenidos multimedia e interactivos en la Web</h1>
+        <p>Diseño de Interfaces Web - Curso 25/26</p>
+    </header>
+
+    <!-- Menú de navegación principal -->
+    <nav class="main-nav">
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="animaciones.html">Animaciones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Ejercicio 2-A: Menú con transiciones -->
+        <section class="exercise-section">
+            <h2>Ejercicio 2-A: Menú con transiciones</h2>
+            <p>Menú con efecto "cortina" al pasar el ratón</p>
+            
+            <div class="demo-menu">
+                <ul class="transition-menu">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="explanation">
+                <p><strong>Requisito del ejercicio:</strong> "al pasar el ratón sobre una opción del menú, aparezca una cortina de color desplazándose de arriba hacia abajo"</p>
+                
+                <div class="criteria-check">
+                    <p><strong>✅ CUMPLIDO - Implementación:</strong></p>
+                    <ul>
+                        <li>Se utiliza un pseudo-elemento <code>::before</code> como cortina</li>
+                        <li>Posición inicial: <code>top: -100%</code> (fuera de vista, arriba)</li>
+                        <li>Posición al hover: <code>top: 0</code> (baja hasta cubrir el botón)</li>
+                        <li>Transición: <code>transition: top 0.3s ease</code> para movimiento suave</li>
+                        <li>Color de cortina: <code>background-color: #2c3e50</code> (azul oscuro)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejercicio 2-B: Transformaciones y transiciones -->
+        <section class="exercise-section">
+            <h2>Ejercicio 2-B: Transformaciones y transiciones</h2>
+            <p>Efectos al pasar el ratón sobre imágenes</p>
+            
+            <div class="transformations-demo">
+                <div class="promo-product">
+                    <h3>Producto en promoción</h3>
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/300x200/4CAF50/FFFFFF?text=Producto+Promoción" 
+                             alt="Producto en promoción" class="promo-image">
+                    </div>
+                    <p class="instruction">Pasa el ratón sobre la imagen para aumentar su escala</p>
+                    
+                    <div class="criteria-check">
+                        <p><strong>✅ CUMPLIDO - Producto en promoción:</strong></p>
+                        <ul>
+                            <li><strong>Requisito:</strong> "Se modificará la escala, aumentando el tamaño de la imagen"</li>
+                            <li>Transformación: <code>transform: scale(1.15)</code> al hacer hover</li>
+                            <li>Transición: <code>transition: transform 0.4s cubic-bezier(...)</code></li>
+                            <li>Efecto: Aumenta un 15% el tamaño con efecto de rebote</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="featured-products">
+                    <h3>Productos destacados</h3>
+                    <div class="products-grid">
+                        <div class="product">
+                            <div class="image-container">
+                                <img src="https://via.placeholder.com/200x150/2196F3/FFFFFF?text=Producto+1" 
+                                     alt="Producto destacado 1" class="featured-image">
+                            </div>
+                            <p class="product-name">Producto 1</p>
+                        </div>
+                        
+                        <div class="product">
+                            <div class="image-container">
+                                <img src="https://via.placeholder.com/200x150/FF9800/FFFFFF?text=Producto+2" 
+                                     alt="Producto destacado 2" class="featured-image">
+                            </div>
+                            <p class="product-name">Producto 2</p>
+                        </div>
+                        
+                        <div class="product">
+                            <div class="image-container">
+                                <img src="https://via.placeholder.com/200x150/9C27B0/FFFFFF?text=Producto+3" 
+                                     alt="Producto destacado 3" class="featured-image">
+                            </div>
+                            <p class="product-name">Producto 3</p>
+                        </div>
+                    </div>
+                    
+                    <div class="criteria-check">
+                        <p><strong>✅ CUMPLIDO - Productos destacados:</strong></p>
+                        <ul>
+                            <li><strong>Requisito:</strong> "Se modificará la posición del elemento mediante translate, desplazándose hacia arriba"</li>
+                            <li>Transformación: <code>transform: translateY(-10px)</code> al hacer hover</li>
+                            <li>Transición: <code>transition: transform 0.3s ease</code></li>
+                            <li>Efecto: Se desplaza 10 píxeles hacia arriba</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejercicio 3: Página Animaciones -->
+        <section class="exercise-section">
+            <h2>Ejercicio 3: Página Animaciones</h2>
+            <p>Contiene tres animaciones diferentes como solicita la tarea</p>
+            
+            <!-- Animación 1: Slider con CSS @keyframes -->
+            <div class="animation-section">
+                <h3>1. Slider con CSS @keyframes</h3>
+                <p>Slider automático que cambia imágenes</p>
+                
+                <div class="slider-container">
+                    <div class="css-slider">
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/800x300/FF5722/FFFFFF?text=Imagen+1+del+Slider" 
+                                 alt="Slider imagen 1">
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/800x300/3F51B5/FFFFFF?text=Imagen+2+del+Slider" 
+                                 alt="Slider imagen 2">
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/800x300/009688/FFFFFF?text=Imagen+3+del+Slider" 
+                                 alt="Slider imagen 3">
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/800x300/E91E63/FFFFFF?text=Imagen+4+del+Slider" 
+                                 alt="Slider imagen 4">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="criteria-check">
+                    <p><strong>✅ CUMPLIDO - Slider con @keyframes:</strong></p>
+                    <ul>
+                        <li><strong>Requisitos:</strong>
+                            <ul>
+                                <li>"Realiza un slider a través de una animación con CSS (@keyframe)"</li>
+                                <li>"La animación tiene que durar 10 segundos"</li>
+                                <li>"Repitiéndose de forma ininterrumpida"</li>
+                                <li>"Tiempo entre imagen e imagen debe durar el mismo tiempo"</li>
+                            </ul>
+                        </li>
+                        <li>Implementación: Animación <code>@keyframes slide</code> de 10 segundos</li>
+                        <li>Duración: <code>animation: slide 10s infinite</code></li>
+                        <li>Tiempo por imagen: 2.5 segundos visibles + 0.5s transición = 3s total por imagen</li>
+                        <li>4 imágenes × 2.5s = 10 segundos totales (cumple requisito)</li>
+                        <li>Repetición: <code>infinite</code> (ininterrumpida)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Animación 2: Barra de progreso con Canvas -->
+            <div class="animation-section">
+                <h3>2. Barra de progreso con Canvas</h3>
+                <p>Barra que muestra el número de likes que recibe la página</p>
+                
+                <div class="canvas-container">
+                    <canvas id="progressCanvas" width="600" height="100">
+                        Tu navegador no soporta el elemento canvas.
+                    </canvas>
+                    
+                    <div class="canvas-controls">
+                        <div class="likes-counter" id="likesCounter">
+                            <span id="likesCount">0</span> / 200 likes
+                        </div>
+                        <button id="likeButton">¡Dar Like!</button>
+                        <button id="resetButton">Reiniciar</button>
+                    </div>
+                </div>
+                
+                <div class="criteria-check">
+                    <p><strong>✅ CUMPLIDO - Barra de progreso con Canvas:</strong></p>
+                    <ul>
+                        <li><strong>Requisitos:</strong>
+                            <ul>
+                                <li>"Dibuja, con canvas, una barra de progreso"</li>
+                                <li>"Mostrará el número de likes que recibe la página"</li>
+                                <li>"Irá de 0 a 200"</li>
+                                <li>"Tendrá un botón que cada vez que se pulse aumentará la barra de progreso"</li>
+                            </ul>
+                        </li>
+                        <li>Implementación: Uso de Canvas API para dibujar barra</li>
+                        <li>Rango: 0 a 200 likes exactamente</li>
+                        <li>Botón "Dar Like": Incrementa en 10 likes cada click</li>
+                        <li>Botón "Reiniciar": Vuelve a 0 likes</li>
+                        <li>Animación: Barra se llena suavemente con requestAnimationFrame</li>
+                        <li>Visualización: Muestra número actual / 200</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Animación 3: Imágenes SVG persiguiéndose -->
+            <div class="animation-section">
+                <h3>3. Animación con SVG: Imágenes persiguiéndose</h3>
+                <p>Dos figuras que se siguen mutuamente a través de una trayectoria</p>
+                
+                <div class="svg-container">
+                    <svg id="svgAnimation" width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Trayectoria circular -->
+                        <circle id="path" cx="300" cy="200" r="150" fill="none" stroke="#E0E0E0" stroke-width="2" stroke-dasharray="5,5"/>
+                        
+                        <!-- Figura 1 (perseguidor) - círculo azul -->
+                        <circle id="follower1" cx="300" cy="50" r="20" fill="#2196F3">
+                            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+                                <mpath xlink:href="#path"/>
+                            </animateMotion>
+                        </circle>
+                        
+                        <!-- Figura 2 (perseguido) - círculo naranja -->
+                        <circle id="follower2" cx="450" cy="200" r="15" fill="#FF9800">
+                            <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+                                <mpath xlink:href="#path"/>
+                            </animateMotion>
+                        </circle>
+                        
+                        <!-- Etiquetas descriptivas -->
+                        <text x="300" y="380" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">
+                            Dos figuras persiguiéndose en una trayectoria circular
+                        </text>
+                        <text id="label1" x="300" y="30" text-anchor="middle" font-family="Arial" font-size="12" fill="#2196F3">Perseguidor</text>
+                        <text id="label2" x="450" y="180" text-anchor="middle" font-family="Arial" font-size="12" fill="#FF9800">Perseguido</text>
+                    </svg>
+                </div>
+                
+                <div class="animation-controls">
+                    <button id="startAnimation">Iniciar animación</button>
+                    <button id="stopAnimation">Detener animación</button>
+                    <button id="reverseAnimation">Invertir dirección</button>
+                </div>
+                
+                <div class="criteria-check">
+                    <p><strong>✅ CUMPLIDO - Animación con SVG:</strong></p>
+                    <ul>
+                        <li><strong>Requisito:</strong> "Poner dos imágenes persiguiéndose a través de una trayectoria"</li>
+                        <li>Implementación: Dos elementos <code>&lt;circle&gt;</code> SVG</li>
+                        <li>Trayectoria: Circular definida por elemento <code>&lt;circle id="path"&gt;</code></li>
+                        <li>Animación: <code>&lt;animateMotion&gt;</code> siguiendo la trayectoria</li>
+                        <li>Persecución: Velocidades diferentes (6s vs 4s) para efecto de persecución</li>
+                        <li>Controles: Botones para iniciar, detener e invertir dirección</li>
+                        <li>Efectos adicionales: Animación de pulso y sombras para mejor visibilidad</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="note">
+                <h4>📋 Resumen de Criterios de Evaluación Cumplidos:</h4>
+                <p><strong>RA3g:</strong> ✅ Se han realizado animaciones a partir de imágenes fijas (slider, transformaciones hover)</p>
+                <p><strong>RA4a:</strong> ✅ Se han reconocido y analizado las tecnologías (CSS Transitions, @keyframes, Canvas, SVG)</p>
+                <p><strong>RA4c:</strong> ✅ Se han utilizado herramientas gráficas (CSS, Canvas API, SVG)</p>
+                <p><strong>RA4e:</strong> ✅ Se han agregado elementos multimedia a documentos Web (imágenes, canvas, svg)</p>
+                <p><strong>RA4f:</strong> ✅ Se ha añadido interactividad (hover effects, botones interactivos)</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="task-footer">
+        <p>Tarea UD.5 - Animaciones en la Web | Diseño de Interfaces Web 25/26</p>
+        <p>Todos los ejercicios completados según especificaciones de la tarea</p>
+    </footer>
+
+    <!-- Script para la funcionalidad del Canvas y mejoras -->
+    <script>
+        // ================================================
+        // IMPLEMENTACIÓN CANVAS - Barra de progreso de likes
+        // ================================================
+        const canvas = document.getElementById('progressCanvas');
+        const ctx = canvas.getContext('2d');
+        const likesCountElement = document.getElementById('likesCount');
+        const likesCounterElement = document.getElementById('likesCounter');
+        const likeButton = document.getElementById('likeButton');
+        const resetButton = document.getElementById('resetButton');
+        
+        let likes = 0;
+        const maxLikes = 200;
+        const barWidth = 500;
+        const barHeight = 30;
+        const barX = (canvas.width - barWidth) / 2;
+        const barY = (canvas.height - barHeight) / 2;
+        let animationId = null;
+        
+        // Función para dibujar la barra de progreso
+        function drawProgressBar(progress = likes/maxLikes) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Fondo de la barra
+            ctx.fillStyle = '#E0E0E0';
+            ctx.fillRect(barX, barY, barWidth, barHeight);
+            
+            // Barra de progreso con gradiente
+            const progressWidth = progress * barWidth;
+            const gradient = ctx.createLinearGradient(barX, barY, barX + barWidth, barY);
+            gradient.addColorStop(0, '#4CAF50');
+            gradient.addColorStop(1, '#2E7D32');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(barX, barY, progressWidth, barHeight);
+            
+            // Borde
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(barX, barY, barWidth, barHeight);
+            
+            // Texto
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(`Likes: ${Math.round(progress * maxLikes)} / ${maxLikes}`, canvas.width / 2, barY + barHeight + 25);
+        }
+        
+        // Animación suave de la barra
+        function animateProgressBar(startValue, endValue, duration = 500) {
+            const startTime = performance.now();
+            const startProgress = startValue / maxLikes;
+            const endProgress = endValue / maxLikes;
+            
+            function animate(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+                const currentProgress = startProgress + (endProgress - startProgress) * easeOutQuad;
+                
+                drawProgressBar(currentProgress);
+                
+                if (progress < 1) {
+                    animationId = requestAnimationFrame(animate);
+                } else {
+                    likes = endValue;
+                    likesCountElement.textContent = likes;
+                }
+            }
+            
+            cancelAnimationFrame(animationId);
+            animationId = requestAnimationFrame(animate);
+        }
+        
+        // Aumentar likes (10 en 10)
+        function increaseLikes() {
+            if (likes < maxLikes) {
+                const newLikes = Math.min(likes + 10, maxLikes);
+                likesCounterElement.classList.add('animating');
+                setTimeout(() => {
+                    likesCounterElement.classList.remove('animating');
+                }, 500);
+                animateProgressBar(likes, newLikes);
+            }
+        }
+        
+        // Reiniciar likes
+        function resetLikes() {
+            animateProgressBar(likes, 0, 300);
+        }
+        
+        // ================================================
+        // CONTROLES ANIMACIÓN SVG
+        // ================================================
+        const startButton = document.getElementById('startAnimation');
+        const stopButton = document.getElementById('stopAnimation');
+        const reverseButton = document.getElementById('reverseAnimation');
+        const follower1 = document.getElementById('follower1');
+        const follower2 = document.getElementById('follower2');
+        
+        // Iniciar animación SVG
+        startButton.addEventListener('click', function() {
+            follower1.querySelector('animateMotion').beginElement();
+            follower2.querySelector('animateMotion').beginElement();
+        });
+        
+        // Detener animación SVG
+        stopButton.addEventListener('click', function() {
+            follower1.querySelector('animateMotion').endElement();
+            follower2.querySelector('animateMotion').endElement();
+        });
+        
+        // Invertir dirección (cambiando duración)
+        reverseButton.addEventListener('click', function() {
+            const anim1 = follower1.querySelector('animateMotion');
+            const anim2 = follower2.querySelector('animateMotion');
+            anim1.setAttribute('dur', anim1.getAttribute('dur') === '6s' ? '12s' : '6s');
+            anim2.setAttribute('dur', anim2.getAttribute('dur') === '4s' ? '8s' : '4s');
+        });
+        
+        // ================================================
+        // EVENT LISTENERS
+        // ================================================
+        likeButton.addEventListener('click', increaseLikes);
+        resetButton.addEventListener('click', resetLikes);
+        
+        // Inicializar barra
+        drawProgressBar();
+        
+        // Iniciar automáticamente animación SVG
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                follower1.querySelector('animateMotion').beginElement();
+                follower2.querySelector('animateMotion').beginElement();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

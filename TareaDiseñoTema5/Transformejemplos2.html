@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.boton {
+  padding: 15px 30px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  /* TRANSICIÓN: propiedad | duración | timing | delay */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background: #2ecc71;           /* Cambia color en 0.3s */
+  transform: translateY(-5px);   /* Se mueve en 0.2s */
+}
+</style>
+</head>
+<body>
+<button class="boton">Pasa el ratón</button>
+</body>
+</html>

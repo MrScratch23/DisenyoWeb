@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.caja {
+  width: 100px; height: 100px; background: red; margin: 30px;
+  transition: transform 0.5s;
+}
+/* Diferentes transformaciones: */
+.transladar:hover { transform: translateX(50px); }
+.escalar:hover { transform: scale(1.5); }
+.rotar:hover { transform: rotate(45deg); }
+.sesgar:hover { transform: skew(20deg); }
+.combinada:hover { transform: translateX(50px) rotate(45deg) scale(1.2); }
+</style>
+</head>
+<body>
+<div class="caja transladar">Mover</div>
+<div class="caja escalar">Agrandar</div>
+<div class="caja rotar">Girar</div>
+<div class="caja sesgar">Inclinar</div>
+<div class="caja combinada">Todo junto</div>
+</body>
+</html>

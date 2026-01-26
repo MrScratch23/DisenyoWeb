@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen DIW UD5</title>
+    <link rel="stylesheet" href="estilos_examen.css" media="screen">
+    <link rel="icon" href="../favicon.png" type="image/png" sizes="96x96">
+    <script src="code.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Sustituir este texto por tu nombre y apellidos o añadirlo al lado -->
+        
+        <img src="../logo.svg" alt="Imagen de logo">
+    </header>
+    
+   
+    <!-- Zona reservada para insertar la imagen tratada  -->	
+    <div class="zona z_imagen">
+        <h2>ZONA DE IMAGEN</h2>
+
+        <div class="zona_img_responsiva">
+            <!-- ---------------------------------------------------- -->
+            <!-- Insertar etiqueta/s necesarias para que la imagen se vea como se indica en el enunciado. -->
+            <!-- ---------------------------------------------------- -->
+             <picture>
+<picture>
+    <source media="(max-width: 1000px)" srcset="../imagen1000.jpg">
+    <source media="(max-width: 600px)" srcset="../imagen600.jpg">
+    <img src="../imagen1000.jpg" alt="Imagen por defecto">
+</picture>
+</picture>
+        
+        
+    </div>
+    </div>
+
+	<!-- Zona reservada para insertar el video suministrado -->
+    <div class="zona z_video">
+        <h2>ZONA DE VIDEO</h2>
+        <!-- -------------------------------------------------------------------------- -->
+        <!-- Insertar etiqueta/s necesarias para que el video se visualice correctamente -->
+        <!-- -------------------------------------------------------------------------- -->
+         <!-- Contenedor del video -->
+         <div class="video-container">
+             <video 
+                 id="miVideo"
+                 poster="../imagen1000.jpg" 
+                 controls 
+                 preload="metadata"
+             >
+                 
+                 <source src="../video.mp4" type="video/mp4">     
+                 <!-- Mensaje para navegadores antiguos -->
+                 Tu navegador no soporta la etiqueta de video.
+             </video>
+             
+             <!-- Controles personalizados -->
+             <div class="bo">
+                  <button id="btnReiniciar" type="button">Reiniciar</button>  
+             </div>
+         </div>
+         
+      
+   
+    </div>
+
+
+    <!-- Zona reservada para la animación con @Keyframe-->
+    <div class="zona z_animacion_css">
+        <h2>ZONA DE ANIMACIÓN @KEYFRAME</h2>
+        <div class="progress-container">
+             <div class="progress-bar"></div>
+              <div class="texto-final">
+         ¡Instalación completada!
+        </div>
+        </div>
+
+       
+    </div>
+
+
+    <!-- Zona reservada para la animación con SVG-->
+    <div class="zona z_animacion_svg">
+        <h2>ZONA DE ANIMACIÓN SVG</h2>
+        <!-- -------------------------------------------------------------------------- -->
+        <!-- Insertar etiqueta/s necesarias para que realizar la animación con SVG -->
+        <!-- -------------------------------------------------------------------------- -->
+   <svg width="100%" height="150" xmlns="http://www.w3.org/2000/svg" >
+ <text x="50" y="50" style="font-family:Verdana;font-size:32" >R
+ <animateMotion
+ path="M50,50 q50,50 50,0 q60,50 100,0"
+ begin="0s"
+ dur="10s"
+ repeatCount ="indefinite" />
+</text>
+ <text x="50" y="50" style="font-family:Verdana;font-size:32" >D
+ <animateMotion
+ path="M50,50 q50,50 50,0 q60,50 100,0"
+ begin="0s"
+ dur="10s"
+ repeatCount ="indefinite" />
+  <text x="50" y="50" style="font-family:Verdana;font-size:32" >T
+ <animateMotion
+ path="M50,50 q50,50 50,0 q60,50 100,0"
+ begin="0s"
+ dur="10s"
+ repeatCount ="indefinite" />
+  <text x="50" y="50" style="font-family:Verdana;font-size:32" >M
+ <animateMotion
+ path="M50,50 q50,50 50,0 q60,50 100,0"
+ begin="0s"
+ dur="10s"
+ repeatCount ="indefinite" />
+</text>
+</text>
+</text>
+</svg>
+
+ 
+
+    </div>
+
+	<!-- Zona reservada para crear el ejercicio de jquery -->
+    <div class="zona z_jquery">
+        <h2 id="encabezado">ZONA DE JQUERY</h2>
+
+        <div id="z_jquery_elementos">
+            <!-- Zona donde se muestra el texto -->
+            <div id="z_jquery_texto">
+                 <p id="parrafo_1" class="parrafo_texto">Cristóbal de Monroy y Silva nació en Alcalá de Guadaíra el 22 de octubre de 1612 y falleció el 6 de julio de 1649.
+                 Fue un historiador, dramaturgo y poeta español del Siglo de Oro.</p> 
+         
+            </div>
+        
+
+            <!-- Zona donde se muestran los elementos de interacción -->
+	    	<div  id="z_jquery_interaccion">
+                <h3>Zona de interacción</h3>
+                <!-- Opción para cambiar el color de fondo-->
+                <div class="opcion color">
+                    <label for="color_fondo">Color de fondo de la clase zona: <input type="color" id="color_fondo" /></label>
+                </div>
+                <!-- Opción para cambiar el tamaño de texto -->
+                <div class="opcion aumentar">
+                    <button id="b_aumentar" type="button">Aumenta el tamaño del texto</button>  
+                </div>
+    
+                
+                				<!-- Opción para ocultar el texto-->
+                <div>
+                    <p> Pulsa sobre el texto "ZONA JQUERY" PARA OCULTAR EL TEXTO</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+</body>
+</html>

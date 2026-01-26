@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        /* Estilos para el reproductor */
+        .video-container {
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        video {
+            width: 100%;
+            display: block;
+        }
+        .controles-personalizados {
+            background: #2c3e50;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .btn-video {
+            padding: 8px 16px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-video:hover {
+            background: #2980b9;
+        }
+        #subtitulosBtn {
+            background: #e74c3c;
+        }
+        #subtitulosBtn.active {
+            background: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video 
+            id="miVideo"
+            poster="favicon-256x256.png" 
+            controls 
+            preload="metadata"
+        >
+            <!-- Múltiples formatos para compatibilidad -->
+            <source src="BAD BUNNY - TÚ NO METES CABRA-- slowed-- yujiro hanma AMV - GokleX-Kakarotoxd8 (480p, h264, youtube).mp4" type="video/mp4">
+            <source src="tutorial.webm" type="video/webm">
+            
+            <!-- Subtítulos -->
+            <track 
+                kind="subtitles" 
+                src="subtitulos.vtt" 
+                srclang="es" 
+                label="Español" 
+                default
+            >
+            <track 
+                kind="subtitles" 
+                src="subtitulos-en.vtt" 
+                srclang="en" 
+                label="English"
+            >
+            
+            <!-- Mensaje para navegadores antiguos -->
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        
+        <!-- Controles personalizados adicionales -->
+        <div class="controles-personalizados">
+            <button id="playBtn" class="btn-video"> Play</button>
+            <button id="pauseBtn" class="btn-video"> Pause</button>
+            <button id="subtitulosBtn" class="btn-video">Subtítulos ON</button>
+            <input type="range" id="volumenSlider" min="0" max="1" step="0.1" value="1">
+            <span id="tiempoActual">00:00</span> / <span id="duracionTotal">00:00</span>
+        </div>
+    </div>
+
+    <script>
+        // Elementos del DOM
+        const video = document.getElementById('miVideo');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const subtitulosBtn = document.getElementById('subtitulosBtn');
+        const volumenSlider = document.getElementById('volumenSlider');
+        const tiempoActual = document.getElementById('tiempoActual');
+        const duracionTotal = document.getElementById('duracionTotal');
+        
+        // Controles básicos
+        playBtn.addEventListener('click', () => video.play());
+        pauseBtn.addEventListener('click', () => video.pause());
+        
+        // Control de volumen
+        volumenSlider.addEventListener('input', (e) => {
+            video.volume = e.target.value;
+        });
+        
+        // Control de subtítulos
+        let subtitulosActivos = true;
+        subtitulosBtn.addEventListener('click', () => {
+            subtitulosActivos = !subtitulosActivos;
+            video.textTracks[0].mode = subtitulosActivos ? 'showing' : 'hidden';
+            subtitulosBtn.textContent = subtitulosActivos ? '📝 Subtítulos ON' : '📝 Subtítulos OFF';
+            subtitulosBtn.classList.toggle('active', subtitulosActivos);
+        });
+        
+        // Actualizar tiempo
+        video.addEventListener('timeupdate', () => {
+            tiempoActual.textContent = formatTime(video.currentTime);
+        });
+        
+        video.addEventListener('loadedmetadata', () => {
+            duracionTotal.textContent = formatTime(video.duration);
+        });
+        
+        // Función para formatear tiempo (mm:ss)
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+    </script>
+</body>
+</html>

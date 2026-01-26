@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Barra de Accesibilidad</title>
+    <!-- Incluir jQuery desde CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* Estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Barra de accesibilidad */
+        .accesibilidad-bar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .accesibilidad-bar h2 {
+            color: white;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-accesibilidad {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-accesibilidad:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accesibilidad i {
+            font-size: 1.2rem;
+        }
+        
+        .tamaño-actual {
+            margin-left: auto;
+            background-color: #34495e;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* Contenido principal */
+        .contenido {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin: 25px 0 15px 0;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        
+        h2:hover {
+            background-color: #e9ecef;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .noticia {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            background-color: #f8f9fa;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Modo oscuro */
+        .modo-oscuro {
+            background-color: #121212;
+            color: white;
+        }
+        
+        .modo-oscuro .contenido {
+            background-color: #1e1e1e;
+        }
+        
+        .modo-oscuro h1, .modo-oscuro h2 {
+            color: #4CAF50;
+        }
+        
+        .modo-oscuro p {
+            color: white;
+        }
+        
+        .modo-oscuro .noticia {
+            background-color: #2d2d2d;
+            border-left-color: #4CAF50;
+        }
+        
+        /* Vista simplificada */
+        .vista-simplificada .contenido-noticia {
+            display: none;
+        }
+        
+        .vista-simplificada h2 {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+        }
+        
+        /* Botón oculto */
+        .oculto {
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .accesibilidad-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .tamaño-actual {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .btn-accesibilidad {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de accesibilidad -->
+    <div class="accesibilidad-bar">
+        <h2><i class="fas fa-universal-access"></i> Accesibilidad</h2>
+        
+        <button id="btn-aumentar" class="btn-accesibilidad">
+            <i class="fas fa-text-height"></i> Aumentar texto
+        </button>
+        
+        <button id="btn-reducir" class="btn-accesibilidad">
+            <i class="fas fa-text-width"></i> Reducir texto
+        </button>
+        
+        <button id="btn-modo-oscuro" class="btn-accesibilidad">
+            <i class="fas fa-moon"></i> Modo oscuro
+        </button>
+        
+        <button id="btn-vista-simplificada" class="btn-accesibilidad">
+            <i class="fas fa-eye-slash"></i> Vista simplificada
+        </button>
+        
+        <button id="btn-novedades" class="btn-accesibilidad">
+            <i class="fas fa-newspaper"></i> Novedades
+        </button>
+        
+        <button id="btn-reset" class="btn-accesibilidad">
+            <i class="fas fa-redo"></i> Restablecer
+        </button>
+        
+        <div class="tamaño-actual">
+            <i class="fas fa-font"></i> Tamaño actual: <span id="tamaño-texto">16px</span>
+        </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <h1>Noticias sobre Accesibilidad Web</h1>
+        
+        <div class="noticia">
+            <h2>Importancia de la accesibilidad en la web</h2>
+            <div class="contenido-noticia">
+                <p>La accesibilidad web es esencial para garantizar que todas las personas, independientemente de sus capacidades, puedan acceder y utilizar los contenidos en línea. Esto incluye a personas con discapacidades visuales, auditivas, motoras o cognitivas.</p>
+                <p>Implementar prácticas de accesibilidad no solo beneficia a usuarios con discapacidades, sino que también mejora la experiencia para todos los usuarios, incluyendo aquellos que utilizan dispositivos móviles o tienen conexiones lentas a Internet.</p>
+            </div>
+        </div>
+        
+        <div class="noticia">
+            <h2>Pautas de Accesibilidad para el Contenido Web (WCAG)</h2>
+            <div class="contenido-noticia">
+                <p>Las WCAG (Web Content Accessibility Guidelines) son un conjunto de recomendaciones internacionales para hacer el contenido web más accesible. Estas pautas se organizan en cuatro principios: perceptible, operable, comprensible y robusto.</p>
+                <p>La versión más actualizada, WCAG 2.2, incluye nuevos criterios de éxito que abordan las necesidades de usuarios con discapacidades cognitivas o de aprendizaje, así como mejoras para usuarios con baja visión.</p>
+            </div>
+        </div>
+        
+        <div class="noticia">
+            <h2>Tecnologías asistivas más comunes</h2>
+            <div class="contenido-noticia">
+                <p>Existen diversas tecnologías asistivas que ayudan a las personas con discapacidades a navegar por la web. Algunas de las más comunes incluyen lectores de pantalla, magnificadores de pantalla, software de reconocimiento de voz y teclados alternativos.</p>
+                <p>Los desarrolladores web deben tener en cuenta estas tecnologías al diseñar y programar sitios web, asegurándose de que todos los elementos sean compatibles y funcionales con estas herramientas.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Límites recomendados para accesibilidad
+        const TAMAÑO_MAX_PARRAFOS = 24;  // px (1.5 veces el tamaño normal)
+        const TAMAÑO_MAX_TITULOS = 34;   // px
+        const TAMAÑO_MAX_TITULO_PRINCIPAL = 40; // px
+
+        // También sería bueno definir los mínimos
+        const TAMAÑO_MIN_PARRAFOS = 12;  // px
+        const TAMAÑO_MIN_TITULOS = 16;   // px
+        const TAMAÑO_MIN_TITULO_PRINCIPAL = 20; // px
+        
+        // Ejemplo básico para que empieces:
+        $(document).ready(function() {
+            console.log("Documento listo. ¡Implementa la funcionalidad aquí!");
+            
+            // Variables para controlar tamaños
+            let tamañoBaseParrafos = 16;
+            let tamañoBaseTitulos = 22;
+            let tamañoBaseTituloPrincipal = 28;
+            
+            $("#btn-aumentar").click(function() {
+                // Solo aumentar si no hemos alcanzado el máximo
+                if (tamañoBaseParrafos < TAMAÑO_MAX_PARRAFOS) {
+                    tamañoBaseParrafos += 3;
+                    tamañoBaseTitulos += 3;
+                    tamañoBaseTituloPrincipal += 3;
+                    
+                    // Aplicar los nuevos tamaños
+                    $("p").css("font-size", tamañoBaseParrafos + "px");
+                    $("h2").css("font-size", tamañoBaseTitulos + "px");
+                    $("h1").css("font-size", tamañoBaseTituloPrincipal + "px");
+                    
+                    // Actualizar indicador
+                    $("#tamaño-texto").text(tamañoBaseParrafos + "px");
+                    
+                    // Deshabilitar botón si llegamos al máximo
+                    if (tamañoBaseParrafos >= TAMAÑO_MAX_PARRAFOS) {
+                        $(this).prop("disabled", true).css("opacity", "0.6");
+                    }
+                    
+                    // Habilitar botón de reducir si estaba deshabilitado
+                    $("#btn-reducir").prop("disabled", false).css("opacity", "1");
+                }
+            });
+            
+            // Botón 2: Reducir texto
+            $("#btn-reducir").click(function() {
+                // Tu código aquí
+                if (tamañoBaseParrafos > TAMAÑO_MIN_PARRAFOS) {
+                    tamañoBaseParrafos -= 3;
+                    tamañoBaseTitulos -= 3;
+                    tamañoBaseTituloPrincipal -= 3;
+                    
+                    // Aplicar los nuevos tamaños
+                    $("p").css("font-size", tamañoBaseParrafos + "px");
+                    $("h2").css("font-size", tamañoBaseTitulos + "px");
+                    $("h1").css("font-size", tamañoBaseTituloPrincipal + "px");
+                    
+                    // Actualizar indicador
+                    $("#tamaño-texto").text(tamañoBaseParrafos + "px");
+                    
+                    // Deshabilitar botón si llegamos al mínimo
+                    if (tamañoBaseParrafos <= TAMAÑO_MIN_PARRAFOS) {
+                        $(this).prop("disabled", true).css("opacity", "0.6");
+                    }
+                    
+                    // Habilitar botón de aumentar si estaba deshabilitado
+                    $("#btn-aumentar").prop("disabled", false).css("opacity", "1");
+                }
+            });
+            
+            $("h2").click(function() {
+                // Encontrar y mostrar solo el contenido de ESTE apartado
+                $(this).next(".contenido-noticia").slideToggle(300);
+            });
+            
+            // Botón 3: Modo oscuro
+            $("#btn-modo-oscuro").click(function() {
+                // Tu código aquí
+                $(document.body).css("background-color", "black");
+                $("h1").css("color", "green");
+                $("p").css("color", "white");
+            });
+            
+            // Botón 4: Vista simplificada
+            $("#btn-vista-simplificada").click(function() {
+                // Tu código aquí
+                $(".contenido-noticia").slideUp(1200);
+            
+
+            });
+
+            $("h1").click(function() {
+                $(".contenido-noticia").slideDown(2000);
+            })
+            
+         $("#btn-novedades").click(function() {
+    // 1. Crear el nuevo elemento
+    const div = $('<div>');
+
+    
+    // 2. Crear el contenido...
+        div.addClass('noticia');
+    div.html('<h2>Título</h2><p>Contenido</p>');
+    // 3. Insertar al principio
+
+    // ¿Dónde insertarla? ¿Antes de qué elemento?
+     $(".contenido").prepend(div);
+    // 4. Hacer desaparecer el botón
+    $(this).remove(); // o .hide()
+});
+          $("#btn-reset").click(function() {
+    // 1. Restaurar tamaños de texto
+    $("p").css("font-size", "16px");
+    $("h2").css("font-size", "22px");
+    $("h1").css("font-size", "28px");
+    
+    // 2. Restaurar colores (quitar modo oscuro)
+    $("body").css({
+        "background-color": "#f5f5f5",
+        "color": "#333"
+    });
+    
+    // 3. Mostrar todo el contenido
+    $(".contenido-noticia").show();
+    
+    // 4. Restaurar variables internas
+    tamañoBaseParrafos = 16;
+    tamañoBaseTitulos = 22;
+    tamañoBaseTituloPrincipal = 28;
+    
+    // 5. Actualizar indicador
+    $("#tamaño-texto").text("16px");
+    
+    // 6. Habilitar botones
+    $("#btn-aumentar, #btn-reducir").prop("disabled", false).css("opacity", "1");
+    
+    // 7. Si añadiste noticia, eliminarla
+    // Necesitarías haberla marcado de alguna forma
+    $(".noticia-nueva").remove();
+});
+        });
+    </script>
+</body>
+</html>

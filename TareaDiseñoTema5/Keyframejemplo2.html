@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes desplazar {
+  from { 
+    transform: translateX(0); 
+    background: red; 
+  }
+  to { 
+    transform: translateX(300px); 
+    background: blue; 
+  }
+}
+
+.caja {
+  width: 50px; height: 50px; background: red;
+  
+  /* TODAS las propiedades de animation: */
+  animation: desplazar 3s ease-in-out 1s infinite alternate;
+  
+  /* Desglose:
+     nombre: desplazar
+     duración: 3s
+     timing: ease-in-out
+     delay: 1s
+     iteraciones: infinite
+     dirección: alternate (va y vuelve)
+  */
+}
+</style>
+</head>
+<body>
+<div class="caja"></div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        /* Estilos específicos para figure */
+        figure {
+            margin: 30px auto;
+            max-width: 600px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        figcaption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    
+<h1>Buenos días Vietnam</h1>
+
+<!-- Ejemplo de figure con figcaption -->
+<figure>
+    <img 
+        src="https://i.pinimg.com/736x/07/b6/58/07b658f18e34e1a6cdf95c0af8810785.jpg" 
+        alt="El Penitente en las montañas"
+    >
+    <figcaption>
+        Figura 1: "El Penitente" - Formación rocosa natural en los Andes. 
+        Fotografía tomada al amanecer en invierno.
+    </figcaption>
+</figure>
+
+<!-- Versión sin figure (solo para comparación) -->
+<div style="text-align: center; margin: 30px;">
+    <img 
+        src="https://i.pinimg.com/736x/07/b6/58/07b658f18e34e1a6cdf95c0af8810785.jpg" 
+        alt="El Penitente en las montañas"
+        style="max-width: 600px; border-radius: 5px;"
+    >
+    <p style="font-style: italic; color: #555; margin-top: 10px;">
+        "El Penitente" - Formación rocosa natural en los Andes. 
+        Fotografía tomada al amanecer en invierno.
+    </p>
+</div>
+
+</body>
+</html>

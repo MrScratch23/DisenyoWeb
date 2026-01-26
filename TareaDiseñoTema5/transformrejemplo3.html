@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.tarjeta {
+  width: 200px; padding: 20px;
+  background: #f1f1f1; border-radius: 10px;
+  
+  /* Color rápido, transformación lenta */
+  transition: 
+    background 0.4s ease,
+    transform 0.8s ease,
+    box-shadow 0.6s ease;
+}
+
+.tarjeta:hover {
+  background: #3498db;
+  color: white;
+  transform: translateY(-10px) rotate(3deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+<div class="tarjeta">
+  <h3>Tarjeta</h3>
+  <p>Pasa el ratón para ver transiciones diferentes</p>
+</div>
+</body>
+</html>

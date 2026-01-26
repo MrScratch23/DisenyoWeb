@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #4a6ee0 0%, #6a11cb 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #4a6ee0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #4a6ee0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        
+        .method {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            display: block;
+            margin: 10px 0;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .description {
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .sintaxis {
+            background: #4a6ee0;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Cheatsheet jQuery</h1>
+            <p class="tagline">Métodos esenciales para desarrollo web</p>
+        </header>
+        
+        <div class="sintaxis">
+            $("selector").metodo();
+        </div>
+        
+        <div class="content">
+            <!-- SELECCIÓN -->
+            <div class="card">
+                <h2>🎯 SELECCIÓN</h2>
+                <div class="method">
+                    <code>$("p")</code>
+                    <div class="description">Todos los elementos &lt;p&gt;</div>
+                </div>
+                <div class="method">
+                    <code>$("#id")</code>
+                    <div class="description">Elemento con ID específico</div>
+                </div>
+                <div class="method">
+                    <code>$(".clase")</code>
+                    <div class="description">Elementos con clase específica</div>
+                </div>
+                <div class="method">
+                    <code>$("div.clase")</code>
+                    <div class="description">Divs con clase específica</div>
+                </div>
+                <div class="method">
+                    <code>$("ul li:first")</code>
+                    <div class="description">Primer elemento li dentro de ul</div>
+                </div>
+                <div class="method">
+                    <code>$(this)</code>
+                    <div class="description">Elemento actual en un evento</div>
+                </div>
+            </div>
+            
+            <!-- MANIPULACIÓN -->
+            <div class="card">
+                <h2>🔧 MANIPULACIÓN</h2>
+                <div class="method">
+                    <code>.text("nuevo texto")</code>
+                    <div class="description">Cambia el texto del elemento</div>
+                </div>
+                <div class="method">
+                    <code>.html("&lt;b&gt;texto&lt;/b&gt;")</code>
+                    <div class="description">Cambia el HTML interno</div>
+                </div>
+                <div class="method">
+                    <code>.val()</code>
+                    <div class="description">Obtiene el valor de inputs</div>
+                </div>
+                <div class="method">
+                    <code>.append("&lt;div&gt;nuevo&lt;/div&gt;")</code>
+                    <div class="description">Añade contenido al final</div>
+                </div>
+                <div class="method">
+                    <code>.prepend("&lt;div&gt;nuevo&lt;/div&gt;")</code>
+                    <div class="description">Añade contenido al principio</div>
+                </div>
+                <div class="method">
+                    <code>.remove()</code>
+                    <div class="description">Elimina el elemento</div>
+                </div>
+            </div>
+            
+            <!-- CLASES Y ATRIBUTOS -->
+            <div class="card">
+                <h2>🏷️ CLASES Y ATRIBUTOS</h2>
+                <div class="method">
+                    <code>.addClass("clase")</code>
+                    <div class="description">Añade una clase CSS</div>
+                </div>
+                <div class="method">
+                    <code>.removeClass("clase")</code>
+                    <div class="description">Elimina una clase CSS</div>
+                </div>
+                <div class="method">
+                    <code>.toggleClass("clase")</code>
+                    <div class="description">Alterna una clase CSS</div>
+                </div>
+                <div class="method">
+                    <code>.css("color", "red")</code>
+                    <div class="description">Cambia estilo CSS</div>
+                </div>
+                <div class="method">
+                    <code>.attr("href", "nuevo")</code>
+                    <div class="description">Cambia atributo HTML</div>
+                </div>
+                <div class="method">
+                    <code>.prop("disabled", true)</code>
+                    <div class="description">Cambia propiedad (disabled, checked...)</div>
+                </div>
+            </div>
+            
+            <!-- EVENTOS -->
+            <div class="card">
+                <h2>🎮 EVENTOS</h2>
+                <div class="method">
+                    <code>.click(function() { ... })</code>
+                    <div class="description">Al hacer clic</div>
+                </div>
+                <div class="method">
+                    <code>.dblclick(function() { ... })</code>
+                    <div class="description">Al hacer doble clic</div>
+                </div>
+                <div class="method">
+                    <code>.hover(function() { ... })</code>
+                    <div class="description">Al pasar el ratón</div>
+                </div>
+                <div class="method">
+                    <code>.keypress(function() { ... })</code>
+                    <div class="description">Al pulsar tecla</div>
+                </div>
+                <div class="method">
+                    <code>.change(function() { ... })</code>
+                    <div class="description">Al cambiar valor (input, select)</div>
+                </div>
+                <div class="method">
+                    <code>$(document).ready(function() { ... })</code>
+                    <div class="description">Cuando el DOM está listo</div>
+                </div>
+            </div>
+            
+            <!-- EFECTOS -->
+            <div class="card">
+                <h2>✨ EFECTOS</h2>
+                <div class="method">
+                    <code>.hide() / .show()</code>
+                    <div class="description">Oculta/Muestra elemento</div>
+                </div>
+                <div class="method">
+                    <code>.fadeOut() / .fadeIn()</code>
+                    <div class="description">Desvanece/Aparece elemento</div>
+                </div>
+                <div class="method">
+                    <code>.slideUp() / .slideDown()</code>
+                    <div class="description">Desliza hacia arriba/abajo</div>
+                </div>
+                <div class="method">
+                    <code>.toggle()</code>
+                    <div class="description">Alterna entre mostrar/ocultar</div>
+                </div>
+                <div class="method">
+                    <code>.animate({left: '250px'})</code>
+                    <div class="description">Animación personalizada</div>
+                </div>
+                <div class="method">
+                    <code>.delay(1000)</code>
+                    <div class="description">Retrasa la siguiente acción (ms)</div>
+                </div>
+            </div>
+            
+            <!-- TRAVERSING -->
+            <div class="card">
+                <h2>🔍 TRAVERSING</h2>
+                <div class="method">
+                    <code>.parent()</code>
+                    <div class="description">Padre directo</div>
+                </div>
+                <div class="method">
+                    <code>.children()</code>
+                    <div class="description">Hijos directos</div>
+                </div>
+                <div class="method">
+                    <code>.find("selector")</code>
+                    <div class="description">Busca dentro del elemento</div>
+                </div>
+                <div class="method">
+                    <code>.next() / .prev()</code>
+                    <div class="description">Siguiente/Anterior hermano</div>
+                </div>
+                <div class="method">
+                    <code>.siblings()</code>
+                    <div class="description">Todos los hermanos</div>
+                </div>
+                <div class="method">
+                    <code>.first() / .last()</code>
+                    <div class="description">Primer/Último elemento del conjunto</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>📌 <strong>Tip:</strong> jQuery usa la sintaxis <code>$("selector").metodo()</code></p>
+            <p>🔗 <strong>Recurso:</strong> <a href="https://api.jquery.com" target="_blank">Documentación oficial jQuery</a></p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Cheatsheet creada para consulta rápida de métodos esenciales</p>
+        </footer>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            // Ejemplo interactivo en las tarjetas
+            $(".card").click(function() {
+                $(this).toggleClass("clicked");
+            });
+            
+            // Resaltar código al pasar el ratón
+            $("code").hover(
+                function() {
+                    $(this).css("background", "#4a6ee0");
+                },
+                function() {
+                    $(this).css("background", "#2d3748");
+                }
+            );
+            
+            // Mostrar mensaje en consola
+            console.log("✅ Cheatsheet jQuery cargada correctamente");
+            console.log("💡 Usa F12 para abrir las herramientas de desarrollador");
+        });
+    </script>
+</body>
+</html>

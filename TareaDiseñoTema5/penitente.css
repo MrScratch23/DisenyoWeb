@@ -1,0 +1,16 @@
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-penintente {
+    width: 500px;
+    height: 500px;               /* Mismo valor que width */
+    filter: sepia(30%);
+    opacity: 0.9;                /* Usar 0.9 en lugar de 90% (ambos funcionan pero 0.9 es estándar) */
+    border: solid 1px black;
+    border-radius: 50%;          /* ¡La clave! 50% crea un círculo perfecto */
+    object-fit: cover;           /* Ajusta la imagen para que llene el círculo sin deformarse */
+}

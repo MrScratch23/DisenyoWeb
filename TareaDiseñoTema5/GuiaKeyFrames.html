@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía CSS3 - Animaciones y Transiciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        
+        .method {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            display: block;
+            margin: 10px 0;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .description {
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .demo-area {
+            background: #f0f4f8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .demo-box {
+            width: 100px;
+            height: 100px;
+            background: #667eea;
+            margin: 10px auto;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-box:hover {
+            transform: rotate(45deg) scale(1.2);
+            background: #764ba2;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #5a67d8;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Guía CSS3 - Animaciones</h1>
+            <p class="tagline">Transiciones, Transformaciones y @keyframes</p>
+        </header>
+        
+        <div class="content">
+            <!-- TRANSFORMACIONES -->
+            <div class="card">
+                <h2>🔄 TRANSFORMACIONES</h2>
+                <div class="method">
+                    <code>transform: translateX(50px);</code>
+                    <div class="description">Mueve elemento en eje X</div>
+                </div>
+                <div class="method">
+                    <code>transform: translateY(-20px);</code>
+                    <div class="description">Mueve elemento en eje Y</div>
+                </div>
+                <div class="method">
+                    <code>transform: scale(1.5);</code>
+                    <div class="description">Escala elemento (1.5 = 150%)</div>
+                </div>
+                <div class="method">
+                    <code>transform: rotate(45deg);</code>
+                    <div class="description">Rota elemento 45 grados</div>
+                </div>
+                <div class="method">
+                    <code>transform: skewX(20deg);</code>
+                    <div class="description">Inclina elemento en eje X</div>
+                </div>
+                <div class="method">
+                    <code>transform: translate(10px, 20px) rotate(30deg);</code>
+                    <div class="description">Múltiples transformaciones</div>
+                </div>
+                
+                <div class="demo-area">
+                    <h3>Demo - Transformaciones</h3>
+                    <div class="demo-box" id="demo-transform"></div>
+                    <p>Pasa el ratón sobre el cuadrado</p>
+                </div>
+            </div>
+            
+            <!-- TRANSICIONES -->
+            <div class="card">
+                <h2>⏱️ TRANSICIONES</h2>
+                <div class="method">
+                    <code>transition: all 0.3s ease;</code>
+                    <div class="description">Transición básica (propiedad, tiempo, ritmo)</div>
+                </div>
+                <div class="method">
+                    <code>transition-property: background-color, transform;</code>
+                    <div class="description">Especifica propiedades a animar</div>
+                </div>
+                <div class="method">
+                    <code>transition-duration: 2s;</code>
+                    <div class="description">Duración de la transición</div>
+                </div>
+                <div class="method">
+                    <code>transition-timing-function: ease-in-out;</code>
+                    <div class="description">Ritmo de la animación</div>
+                </div>
+                <div class="method">
+                    <code>transition-delay: 1s;</code>
+                    <div class="description">Retraso antes de comenzar</div>
+                </div>
+                
+                <h3>Valores timing-function:</h3>
+                <div class="method">
+                    <code>ease</code><div class="description">Inicio/fin lento, medio rápido (default)</div>
+                    <code>linear</code><div class="description">Velocidad constante</div>
+                    <code>ease-in</code><div class="description">Inicio lento</div>
+                    <code>ease-out</code><div class="description">Final lento</div>
+                    <code>ease-in-out</code><div class="description">Inicio y final lentos</div>
+                </div>
+                
+                <div class="demo-area">
+                    <h3>Ejemplo de transición</h3>
+                    <div class="demo-box" id="demo-transition"></div>
+                    <p>Cambia lentamente al pasar el ratón</p>
+                </div>
+            </div>
+            
+            <!-- @KEYFRAMES -->
+            <div class="card">
+                <h2>🎬 @KEYFRAMES (Animaciones)</h2>
+                <div class="method">
+                    <code>@keyframes nombre {<br>&nbsp;&nbsp;0% { /* inicio */ }<br>&nbsp;&nbsp;100% { /* fin */ }<br>}</code>
+                    <div class="description">Definición básica de animación</div>
+                </div>
+                <div class="method">
+                    <code>animation: nombre 2s ease infinite;</code>
+                    <div class="description">Aplicar animación a elemento</div>
+                </div>
+                
+                <h3>Propiedades de animation:</h3>
+                <div class="method">
+                    <code>animation-name</code><div class="description">Nombre de la animación</div>
+                    <code>animation-duration</code><div class="description">Duración (ej: 3s)</div>
+                    <code>animation-timing-function</code><div class="description">Ritmo (ease, linear...)</div>
+                    <code>animation-delay</code><div class="description">Retraso inicial</div>
+                    <code>animation-iteration-count</code><div class="description">Repeticiones (infinite)</div>
+                    <code>animation-direction</code><div class="description">Dirección (normal, reverse, alternate)</div>
+                    <code>animation-play-state</code><div class="description">Estado (running, paused)</div>
+                </div>
+                
+                <div class="demo-area">
+                    <h3>Ejemplo @keyframes</h3>
+                    <div class="demo-box" id="demo-keyframe"></div>
+                    <div class="controls">
+                        <button onclick="toggleAnimation()">Pausar/Reanudar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EJEMPLOS PRÁCTICOS -->
+            <div class="card">
+                <h2>💡 EJEMPLOS PRÁCTICOS</h2>
+                
+                <h3>1. Botón con hover:</h3>
+                <div class="method">
+                    <code>.boton {<br>&nbsp;&nbsp;transition: all 0.3s ease;<br>}<br>.boton:hover {<br>&nbsp;&nbsp;transform: scale(1.1);<br>&nbsp;&nbsp;background: #667eea;<br>}</code>
+                </div>
+                
+                <h3>2. Animación de carga:</h3>
+                <div class="method">
+                    <code>@keyframes spin {<br>&nbsp;&nbsp;0% { transform: rotate(0deg); }<br>&nbsp;&nbsp;100% { transform: rotate(360deg); }<br>}<br>.spinner {<br>&nbsp;&nbsp;animation: spin 1s linear infinite;<br>}</code>
+                </div>
+                
+                <h3>3. Movimiento suave:</h3>
+                <div class="method">
+                    <code>@keyframes mover {<br>&nbsp;&nbsp;0%, 100% { transform: translateX(0); }<br>&nbsp;&nbsp;50% { transform: translateX(50px); }<br>}<br>.elemento {<br>&nbsp;&nbsp;animation: mover 2s ease-in-out infinite;<br>}</code>
+                </div>
+                
+                <h3>4. Fade in/out:</h3>
+                <div class="method">
+                    <code>@keyframes aparecer {<br>&nbsp;&nbsp;0% { opacity: 0; }<br>&nbsp;&nbsp;100% { opacity: 1; }<br>}<br>.nuevo {<br>&nbsp;&nbsp;animation: aparecer 0.5s ease-out;<br>}</code>
+                </div>
+            </div>
+            
+            <!-- CONTROL CON JAVASCRIPT -->
+            <div class="card">
+                <h2>⚡ CONTROL CON JAVASCRIPT</h2>
+                
+                <div class="method">
+                    <code>// Pausar animación<br>elemento.style.animationPlayState = "paused";</code>
+                </div>
+                
+                <div class="method">
+                    <code>// Reanudar animación<br>elemento.style.animationPlayState = "running";</code>
+                </div>
+                
+                <div class="method">
+                    <code>// Cambiar animación dinámicamente<br>elemento.style.animation = "nuevaAnimacion 2s ease";</code>
+                </div>
+                
+                <div class="method">
+                    <code>// jQuery para controlar animaciones<br>$("#elemento").css("animation-play-state", "paused");</code>
+                </div>
+                
+                <h3>Ejemplo del PDF (péndulo):</h3>
+                <div class="method">
+                    <code>document.getElementById("parar").addEventListener("click", function() {<br>&nbsp;&nbsp;document.getElementById("pendulo").style.animationPlayState = "paused";<br>});</code>
+                </div>
+            </div>
+            
+            <!-- SVG ANIMADO -->
+            <div class="card">
+                <h2>🎨 SVG ANIMADO</h2>
+                
+                <div class="method">
+                    <code>&lt;svg&gt;<br>&nbsp;&nbsp;&lt;rect&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;animateMotion<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="M0,0 q60,100 100,0"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dur="5s"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeatCount="indefinite" /&gt;<br>&nbsp;&nbsp;&lt;/rect&gt;<br>&lt;/svg&gt;</code>
+                </div>
+                
+                <h3>Comandos path SVG:</h3>
+                <div class="method">
+                    <code>M</code><div class="description">Mover a posición</div>
+                    <code>L</code><div class="description">Línea recta</div>
+                    <code>C</code><div class="description">Curva Bézier</div>
+                    <code>Z</code><div class="description">Cerrar ruta</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>📌 <strong>Recursos:</strong> 
+                <a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">Transiciones</a> | 
+                <a href="https://www.w3schools.com/css/css3_animations.asp" target="_blank">Animaciones</a> | 
+                <a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Animations" target="_blank">MDN</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                CSS3 permite animaciones sin JavaScript • Usa GPU para mejor rendimiento • Perfecto para micro-interacciones
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Animación para el demo de @keyframes
+        const keyframeStyle = document.createElement('style');
+        keyframeStyle.textContent = `
+            @keyframes demoAnim {
+                0% { 
+                    transform: translateY(0) rotate(0deg); 
+                    background: #667eea;
+                    border-radius: 8px;
+                }
+                25% { 
+                    transform: translateY(-20px) rotate(90deg); 
+                    background: #764ba2;
+                    border-radius: 50%;
+                }
+                50% { 
+                    transform: translateY(0) rotate(180deg); 
+                    background: #ed64a6;
+                    border-radius: 8px;
+                }
+                75% { 
+                    transform: translateY(20px) rotate(270deg); 
+                    background: #4c51bf;
+                    border-radius: 50%;
+                }
+                100% { 
+                    transform: translateY(0) rotate(360deg); 
+                    background: #667eea;
+                    border-radius: 8px;
+                }
+            }
+            
+            #demo-keyframe {
+                animation: demoAnim 4s ease-in-out infinite;
+            }
+        `;
+        document.head.appendChild(keyframeStyle);
+        
+        // Control de animación
+        let isPaused = false;
+        
+        function toggleAnimation() {
+            const demo = document.getElementById('demo-keyframe');
+            if (isPaused) {
+                demo.style.animationPlayState = 'running';
+                isPaused = false;
+            } else {
+                demo.style.animationPlayState = 'paused';
+                isPaused = true;
+            }
+        }
+        
+        // Demo de transición mejorada
+        const transitionBox = document.getElementById('demo-transition');
+        transitionBox.style.transition = 'all 1s ease-in-out';
+        
+        transitionBox.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.5) rotate(180deg)';
+            this.style.background = '#ed64a6';
+            this.style.borderRadius = '50%';
+        });
+        
+        transitionBox.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+            this.style.background = '#667eea';
+            this.style.borderRadius = '8px';
+        });
+    </script>
+</body>
+</html>
